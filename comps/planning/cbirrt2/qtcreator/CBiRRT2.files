@@ -1,0 +1,9 @@
+../TaskSpaceRegion.h
+../cbirrtproblem.h
+../cbirrtparameters.h
+../cbirrt.h
+../TaskSpaceRegion.cpp
+../cbirrtproblem.cpp
+../cbirrtmain.cpp
+../cbirrt.cpp
+../stdafx.h

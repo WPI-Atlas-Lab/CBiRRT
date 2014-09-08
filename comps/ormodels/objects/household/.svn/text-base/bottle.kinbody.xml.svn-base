@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<KinBody>
+    <!--
+    <Body name="body" type="dynamic">
+        <Geom type="trimesh">
+            <Translation>-0.07 0.07 -0.008</Translation>
+            <RotationAxis>1 0 0 90</RotationAxis>
+            <data>models/objects/bottle.iv 4.5</data>
+            <Render>models/objects/bottle.iv 4.5</Render>
+        </Geom>
+    </Body>
+    -->
+    <Body name="body2" type="static">
+        <Geom type="trimesh">
+            <!--<Translation>-0.07 0.07 -0.008</Translation>-->
+            <RotationAxis>1 0 0 90</RotationAxis>
+            <data>models/objects/bottle.wrl 0.01225</data>
+            <Render>models/objects/bottle.wrl 0.01225</Render>
+        </Geom>
+    </Body>
+<!--
+    <Body name="body" type="static">
+        <Translation>0 0 0</Translation>
+        <Geom type="box">
+            <extents>0.005 0.005 0.005</extents>
+            <diffusecolor>1 0 0</diffusecolor>
+        </Geom>
+    </Body>
+-->
+</KinBody>

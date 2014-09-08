@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sidd comments 3:19pm Monday July 9 2007 -->
+<!-- Joint 1 is rotating clockwise -->
+<!-- Joint 2 is rotating clockwise -->
+<!-- Joint 3 is rotating clockwise -->
+<!-- Joint 4 is rotating correctly but the IV file is flipped 180 degrees -->
+<!-- Joint 5 is rotating clockwise. Also, it's IV file seems to include the preceeding link. The preceeding link is correctly aligned but the actual link is 1 radian CCW along the true Z axis --> 
+<!-- Joint 6 is rotating clockwise. Also, the rotation axis is incorrect -->
+<!-- Joint 7 is probably rotating CW, can't visualize it. -->
+<!-- Added palm. It's rotating weirdly. The fingers seem to rotate independant of the palm -->
+<!-- Ideally, the palm should be in it's own XML file, but loading files inside files is not working -->
+
+
+
+
+<!-- Template
+    <Body name="" type="">
+	  <Translation></Translation>
+	  <RotationAxis></RotationAxis>
+      <Geom type="">
+        <Data>=</Data>
+        <Render></Render>
+      </Geom>
+      <mass type="box">
+        <mass></mass>
+        <extents></extents>
+      </mass>
+    </Body>
+-->
+
+<Robot>
+  <KinBody name="BarrettWAM">
+    <Body name="wam0" type="static">
+      <Translation>-0.22 -0.14 -0.346</Translation>
+      <Geom type="trimesh">
+        <Data>models/WAM/wam0.iv 1.0</Data>
+        <Render>models/WAM/wam0.iv  1.0</Render>
+      </Geom>
+      <mass type="custom">
+        <total>10</total>
+      </mass>
+    </Body>
+
+
+    <Body name="wam1" type="dynamic">
+      <offsetfrom>wam0</offsetfrom>
+      <Translation>0.22 0.14 0.346</Translation>
+      <Geom type="trimesh">
+        <Data>models/WAM/wam1.iv 1.0</Data>
+        <Render>models/WAM/wam1.iv  1.0</Render>
+      </Geom>
+      <mass type="custom">
+        <total>8.3936</total>
+      </mass>
+    </Body>
+
+    <Joint name="Shoulder_Yaw" type="hinge">
+      <Body>wam0</Body>
+      <Body>wam1</Body>
+      <offsetfrom>wam1</offsetfrom> 
+     <axis>0 0 1</axis>
+      <lostop>-140</lostop>
+      <histop>140</histop>
+      <weight>4</weight>
+      <maxvel>2</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+    <Body name="wam2" type="dynamic">
+      <offsetfrom>wam1</offsetfrom>
+      <Translation>0  0  0</Translation>
+      <RotationMat>1 0 0 0 0 1 0 -1 0</RotationMat>
+      <Geom type="trimesh">
+        <Data>models/WAM/wam2.iv  1.0</Data>
+        <Render>models/WAM/wam2.iv  1.0</Render>
+      </Geom>
+      <mass type="custom">
+        <total>4.8487</total>
+      </mass>
+    </Body>
+    <Joint name="Shoulder_Pitch" type="hinge">
+      <Body>wam1</Body>
+      <Body>wam2</Body>
+      <offsetfrom>wam2</offsetfrom>
+      <axis>0 -1 0</axis>
+      <lostop>-103</lostop>
+      <histop>103</histop>
+      <weight>4</weight>
+      <maxvel>2</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+    <Body name="wam3" type="dynamic">
+      <offsetfrom>wam2</offsetfrom>
+      <RotationMat>1 0 0 0 0 -1 0 1 0</RotationMat>
+      <Geom type="trimesh">
+        <Data>models/WAM/wam3.iv  1.0</Data>
+        <Render>models/WAM/wam3.iv  1.0</Render>
+      </Geom>
+      <mass type="custom">
+        <total>1.7251</total>
+      </mass>
+    </Body>
+    <Joint name="Shoulder_Roll" type="hinge">
+      <Body>wam2</Body>
+      <Body>wam3</Body>
+      <offsetfrom>wam3</offsetfrom>
+      <axis>0 1 0</axis>
+      <lostop>-147</lostop>
+      <histop>147</histop>
+      <weight>2</weight>
+      <maxvel>2</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+    <Body name="wam4" type="dynamic">
+      <offsetfrom>wam3</offsetfrom>
+      <Translation>0.045 0 0.55</Translation>
+      <RotationMat>1 0 0 0 0 1 0 -1 0</RotationMat>
+      <Geom type="trimesh">
+        <Data>models/WAM/wam4.iv  1.0</Data>
+        <Render>models/WAM/wam4.iv  1.0</Render>
+      </Geom>
+      <mass type="custom">
+        <total>0.4809</total>
+      </mass>
+    </Body>
+    <Joint name="Elbow" type="hinge">
+      <Body>wam3</Body>
+      <Body>wam4</Body>
+      <offsetfrom>wam4</offsetfrom>
+      <axis>0 -1 0</axis>
+      <lostop>-40</lostop>
+      <histop>170</histop>
+      <weight>2</weight>
+      <maxvel>2</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+    <Body name="wam5" type="dynamic">
+      <offsetfrom>wam4</offsetfrom>
+      <Translation>-0.045 0 0</Translation>
+      <RotationMat>1 0 0 0 0 -1 0 1 0</RotationMat>
+      <Geom type="trimesh">
+        <Data>models/WAM/wam5.iv  1.0</Data>
+        <Render>models/WAM/wam5.iv  1.0</Render>
+      </Geom>
+      <mass type="custom">
+        <total>1.6015</total>
+      </mass>
+    </Body>
+    <Joint name="Wrist_Yaw" type="hinge">
+      <Body>wam4</Body>
+      <Body>wam5</Body>
+      <offsetfrom>wam5</offsetfrom>
+      <axis>0 1 0</axis>
+      <lostop>-245</lostop>
+      <histop>65</histop>
+      <weight>0.5</weight>
+      <maxvel>2</maxvel>
+      <resolution>2</resolution>
+    </Joint>
+
+    <Body name="wam6" type="dynamic">
+      <offsetfrom>wam5</offsetfrom>
+      <Translation>0 0 0.3</Translation>
+      <RotationMat>1 0 0 0 0 1 0 -1 0</RotationMat>
+      <Geom type="trimesh">
+        <Data>models/WAM/wam6.iv  1.0</Data>
+        <Render>models/WAM/wam6.iv  1.0</Render>
+      </Geom>
+      <mass type="custom">
+        <total>0.3067</total>
+      </mass>
+    </Body>
+
+    <Joint name="Wrist_Pitch" type="hinge">
+      <Body>wam5</Body>
+      <Body>wam6</Body>
+      <offsetfrom>wam6</offsetfrom>
+      <axis>0 -1 0</axis>
+      <lostop>-80</lostop>
+      <histop>80</histop>
+      <weight>0.5</weight>
+      <maxvel>2</maxvel>
+      <resolution>2</resolution>
+    </Joint>
+    <Body name="wam7" type="dynamic">
+      <offsetfrom>wam6</offsetfrom>
+      <Translation>0.0  0.0  0</Translation>
+      <RotationMat>1 0 0 0 0 -1 0 1 0</RotationMat> 
+      <Geom type="trimesh">
+        <RotationMat>0 1 0 -1 0 0 0 0 1</RotationMat>
+        <data>models/barrett/hand_w_mug.iv 1.0</data>
+        <Render>models/barrett/hand_w_mug.iv 1.0</Render>
+      </Geom>
+      <mass type="custom">
+        <total>1.18</total>
+      </mass>
+    </Body>
+
+    <Joint name="Wrist_Roll" type="hinge">
+      <Body>wam6</Body>
+      <Body>wam7</Body>
+      <offsetfrom>wam7</offsetfrom>
+      <axis>0 -1 0</axis>
+      <lostop>-172</lostop>
+      <histop>172</histop>
+      <weight>0.5</weight>
+      <maxvel>2</maxvel>
+      <resolution>2</resolution>
+    </Joint>
+
+
+
+  </KinBody>
+
+<!--  <Controller>PlayerController wam 6665 actarray 0</Controller> -->
+<Controller>IdealController</Controller>
+
+<!--  <Manipulator>
+    <base>wam0</base>
+    <effector>wam7</effector>
+    <Translation>0 0 0.18</Translation>
+    <armjoints>Shoulder_Yaw Shoulder_Pitch Shoulder_Roll Elbow Wrist_Yaw Wrist_Pitch Wrist_Roll</armjoints>
+    <joints>Wrist_Roll</joints>
+    <opened>0</opened>
+    <closed>1.0</closed>
+  </Manipulator>
+-->
+</Robot>

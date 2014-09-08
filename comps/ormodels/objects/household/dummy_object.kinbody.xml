@@ -1,0 +1,11 @@
+<KinBody name="dummy_object">
+  <Body type="static">
+    <Geom type="cylinder">
+      <radius>0.08</radius>
+      <height>0.22</height>
+      <rotationaxis>1 0 0 -90</rotationaxis>
+      <diffusecolor>0.8 0.1 0.3</diffusecolor>
+    </Geom> 
+  </Body>
+
+</KinBody>

@@ -1,0 +1,9 @@
+<KinBody name="ice_bin">
+  <Body type="static">
+    <Geom type="trimesh">
+        <!--<Data>ice_bin_padded.iv</Data>-->
+      <Data>ice_bin_collision_box.iv</Data>
+      <Render>ice_bin.iv</Render>
+    </Geom>      
+  </Body>
+</KinBody>

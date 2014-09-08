@@ -1,0 +1,11 @@
+<!-- Table is 1.83m long, 0.61m wide, .035m thick -->
+<KinBody name="cabinet_upper">
+
+  <Body name="cab_upper">
+    <Geom type="box">
+       <Translation>0 0 0.3475</Translation>
+       <extents>.33 0.1325 0.3475</extents>
+       <diffuseColor>0.7 0.7 0.2</diffuseColor>
+    </Geom>
+  </Body>
+</KinBody>

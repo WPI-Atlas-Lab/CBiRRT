@@ -1,0 +1,9 @@
+<KinBody name="ricepilaf">
+  <Body type="static">
+    <Geom type="box">
+      <rotationaxis>0 1 0 -90</rotationaxis>
+      <extents>0.086 0.0575 0.0175</extents>
+      <diffusecolor>1 0 0.3</diffusecolor>
+    </Geom>        
+  </Body>
+</KinBody>

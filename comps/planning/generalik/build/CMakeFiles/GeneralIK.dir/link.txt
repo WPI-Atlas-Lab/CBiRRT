@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC  -L/usr/lib -L/usr/lib    -shared -Wl,-soname,libGeneralIK.so -o libGeneralIK.so CMakeFiles/GeneralIK.dir/GeneralIKmain.o CMakeFiles/GeneralIK.dir/GeneralIK.o -lopenrave0.8 -lqhull -lnewmat 

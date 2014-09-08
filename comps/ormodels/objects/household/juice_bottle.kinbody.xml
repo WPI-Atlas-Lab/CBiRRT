@@ -1,0 +1,11 @@
+<KinBody name="juice">
+  <Body type="static">
+    <Geom type="cylinder">
+      <radius>0.034</radius>
+      <height>0.177</height>
+      <rotationaxis>1 0 0 -90</rotationaxis>
+      <diffusecolor>0 1 0</diffusecolor>
+    </Geom> 
+  </Body>
+
+</KinBody>

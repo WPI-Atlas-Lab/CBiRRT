@@ -1,0 +1,38 @@
+<!-- Table is 1.83m long, 0.61m wide, .035m thick -->
+<KinBody name="table">
+
+  <Body name="table" type="dynamic">
+    <Geom type="box">
+       <extents>0.61 0.30 0.02</extents>
+       <diffuseColor>0.545 0.27 0.0745</diffuseColor>
+    </Geom>
+    <Geom type="cylinder">
+      <translation>0.55 0.25 -0.375</translation>
+      <rotationaxis>1 0 0 -90</rotationaxis>
+      <radius>0.02</radius>
+      <height>0.75</height>
+      <diffuseColor>0 0 0</diffuseColor>
+    </Geom>
+    <Geom type="cylinder">
+      <translation>-0.55 0.25 -0.375</translation>
+      <rotationaxis>1 0 0 -90</rotationaxis>
+      <radius>0.02</radius>
+      <height>0.75</height>
+      <diffuseColor>0 0 0</diffuseColor>
+    </Geom>
+    <Geom type="cylinder">
+      <translation>0.55 -0.25 -0.375</translation>
+      <rotationaxis>1 0 0 -90</rotationaxis>
+      <radius>0.02</radius>
+      <height>0.75</height>
+      <diffuseColor>0 0 0</diffuseColor>
+    </Geom>
+    <Geom type="cylinder">
+      <translation>-0.55 -0.25 -0.375</translation>
+      <rotationaxis>1 0 0 -90</rotationaxis>
+      <radius>0.02</radius>
+      <height>0.75</height>
+      <diffuseColor>0 0 0</diffuseColor>
+    </Geom>
+  </Body>
+</KinBody>

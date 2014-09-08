@@ -1,0 +1,384 @@
+<KinBody name="intelkitchen">
+  <modelsdir>.</modelsdir>
+
+  <Body name="base" type="dynamic">
+    <!-- tall cabinet on far leff -->
+    <Geom type="trimesh">
+      <data>tall_cabinet_padded.iv</data>
+      <Render>tall_cabinet_padded.iv</Render>
+      <!-- shifted 0.08 forward for safety -->
+      <translation>0 -.08 0</translation>
+    </Geom>
+    <Geom type="trimesh">
+      <data>upper_cabinet_padded.iv</data>
+      <Render>upper_cabinet_padded.iv</Render>
+      <!-- shifted 0.08 forward for safety -->
+      <translation>0 0.253 1.411</translation>
+    </Geom>
+    <!-- lower cabinets -->
+    <Geom type="trimesh">
+      <data>kitchen_base_cabinet_sink_padded.iv</data>
+      <Render>kitchen_base_cabinet_sink_padded.iv</Render>
+    </Geom>
+    <!-- mini fridge -->
+    <Geom type="trimesh">
+      <data>mini_fridge_base_padded.iv</data>
+      <Render>mini_fridge_base_padded.iv</Render>
+      <Translation> 1.386   .010    0.905</Translation>
+    </Geom>
+  </Body>
+  <Body name="tall_upper_cabinet_door" type="dynamic">
+    <!-- translation>-0.42 -.0145 1.753</translation -->
+    <!-- shifted 0.08 forward for safety -->
+    <translation>-0.42 -.0945 1.753</translation>
+    <Body file="kitchenhandle2_padded.kinbody.xml">
+      <RotationMat>0 0 1 -1 0 0 0 -1 0</RotationMat>
+      <Translation>0.369 -0.0095 -0.210</Translation>
+    </Body>
+    <Geom type="box" render="false">
+      <extents>0.28 0.07 0.4</extents>
+      <translation>0.19 0 0</translation>
+    </Geom>
+    <Geom type="trimesh">
+      <data>tall_upper_cabinet_door_padded.iv</data>
+      <Render>tall_upper_cabinet_door_padded.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge">
+    <Body>base</Body>
+    <Body>tall_upper_cabinet_door</Body>
+    <offsetfrom>tall_upper_cabinet_door</offsetfrom>
+    <limitsdeg>0 90</limitsdeg>
+    <anchor>0 0 0</anchor>
+      <axis>0 0 -1</axis>
+  </Joint>
+
+  <Body name="tall_lower_cabinet_door" type="dynamic">
+    <!-- translation>-0.42 -.0145  0.753</translation -->
+    <!-- shifted 0.08 forward for safety -->
+    <translation>-0.42 -.0945  0.753</translation>
+    <Body file="kitchenhandle2_padded.kinbody.xml">
+      <RotationMat>0 0 1 -1 0 0 0 -1 0</RotationMat>
+      <Translation>0.369 -0.0095 0.475</Translation>
+    </Body>
+    <Geom type="trimesh">
+      <data>tall_lower_cabinet_door_padded.iv</data>
+      <Render>tall_lower_cabinet_door_padded.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge">
+    <Body>base</Body>
+    <Body>tall_lower_cabinet_door</Body>
+    <offsetfrom>tall_lower_cabinet_door</offsetfrom>
+    <limitsdeg>0 90</limitsdeg>
+    <anchor>0 0 0</anchor>
+      <axis>0 0 -1</axis>
+  </Joint>
+
+  <Body name="upper_cabinet_door1" type="dynamic">
+    <!--translation>0.0375 .315 1.753</translation-->
+    <!-- shifted 0.08 forward for safety -->
+    <translation>0.0375 .235 1.786</translation>
+    <Body file="kitchenhandle2_padded.kinbody.xml">
+      <RotationMat>0 0 1 -1 0 0 0 -1 0</RotationMat>
+      <rotationaxis>0 1 0 -0.22</rotationaxis>
+      <Translation>0.388 -0.0095 -0.210</Translation>
+    </Body>
+    <Geom type="box" render="false">
+      <extents>0.21 0.016 0.3524</extents>
+      <translation>0.2 0 0</translation>
+    </Geom>
+    <!-- not padded on purpose, don't change -->
+    <Geom type="trimesh">
+      <data>upper_cabinet_door.iv</data>
+      <Render>upper_cabinet_door.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge">
+    <Body>base</Body>
+    <Body>upper_cabinet_door1</Body>
+    <offsetfrom>upper_cabinet_door1</offsetfrom>
+    <limitsdeg>0 90</limitsdeg>
+    <anchor>0 0 0</anchor>
+      <axis>0 0 -1</axis>
+  </Joint>
+
+  <Body name="upper_cabinet_door2" type="dynamic">
+    <!-- translation>0.875 .315 1.753</translation -->
+    <!-- shifted 0.08 forward for safety -->
+    <translation>0.875 .235 1.786</translation>
+    <rotationaxis>0 1 0 180</rotationaxis> 
+    <Body file="kitchenhandle2_padded.kinbody.xml">
+      <RotationMat>0 0 1 -1 0 0 0 -1 0</RotationMat>
+      <rotationaxis>0 1 0 -0.22</rotationaxis>
+      <Translation>0.388 -0.0095 0.210</Translation>
+    </Body>
+    <Geom type="box" render="false">
+      <extents>0.21 0.016 0.3524</extents>
+      <translation>0.2 0 0</translation>
+    </Geom>
+    <!-- not padded on purpose, don't change -->
+    <Geom type="trimesh">
+      <data>upper_cabinet_door.iv</data>
+      <Render>upper_cabinet_door.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge">
+    <Body>base</Body>
+    <Body>upper_cabinet_door2</Body>
+    <offsetfrom>upper_cabinet_door2</offsetfrom>
+    <limitsdeg>0 90</limitsdeg>
+    <anchor>0 0 0</anchor>
+      <axis>0 0 1</axis>
+  </Joint>
+
+  <Body name="upper_cabinet_door3" type="dynamic">
+    <!-- translation>0.957 .315 1.753</translation -->
+    <!-- shifted 0.08 forward for safety -->
+    <translation>0.957 .235 1.786</translation>
+    <Body file="kitchenhandle2_padded.kinbody.xml">
+      <RotationMat>0 0 1 -1 0 0 0 -1 0</RotationMat>
+      <rotationaxis>0 1 0 -0.22</rotationaxis>
+      <Translation>0.388 -0.0095 -0.210</Translation>
+    </Body>
+    <Geom type="box" render="false">
+      <extents>0.21 0.016 0.3524</extents>
+      <translation>0.2 0 0</translation>
+    </Geom>
+    <!-- not padded on purpose, don't change -->
+    <Geom type="trimesh">
+      <data>upper_cabinet_door.iv</data>
+      <Render>upper_cabinet_door.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge">
+    <Body>base</Body>
+    <Body>upper_cabinet_door3</Body>
+    <offsetfrom>upper_cabinet_door3</offsetfrom>
+    <limitsdeg>0 90</limitsdeg>
+    <anchor>0 0 0</anchor>
+      <axis>0 0 -1</axis>
+  </Joint>
+
+  <Body name="upper_cabinet_door4" type="dynamic">
+    <!--translation>1.796 .315 1.753</translation-->
+    <!-- shifted 0.08 forward for safety -->
+    <translation>1.796 .235 1.786</translation>
+    <rotationaxis>0 1 0 180</rotationaxis> 
+    <Body file="kitchenhandle2_padded.kinbody.xml">
+      <RotationMat>0 0 1 -1 0 0 0 -1 0</RotationMat>
+      <rotationaxis>0 1 0 -0.22</rotationaxis>
+      <Translation>0.388 -0.0095 0.210</Translation>
+    </Body>
+    <Geom type="box" render="false">
+      <extents>0.21 0.016 0.3524</extents>
+      <translation>0.2 0 0</translation>
+    </Geom>
+    <!-- not padded on purpose, don't change -->
+    <Geom type="trimesh">
+      <data>upper_cabinet_door.iv</data>
+      <Render>upper_cabinet_door.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge">
+    <Body>base</Body>
+    <Body>upper_cabinet_door4</Body>
+    <offsetfrom>upper_cabinet_door4</offsetfrom>
+    <limitsdeg>0 90</limitsdeg>
+    <anchor>0 0 0</anchor>
+      <axis>0 0 1</axis>
+  </Joint>
+
+  <Body name="fridge_door" type="dynamic">
+    <Translation> 1.386   .010  0.905</Translation>
+    <Geom type="box" render="false">
+      <extents>0.2222 0.015 0.2350</extents>
+      <translation>0.2222 0 0.2349</translation>
+      <diffusecolor>1 0 0</diffusecolor>
+    </Geom>
+    <Geom type="box" render="false">
+      <extents>0.018 0.018 0.1</extents>
+      <translation>0.05 -0.06 0.27</translation>
+      <diffusecolor>1 0 0</diffusecolor>
+    </Geom>
+    <!-- not padded on purpose, don't change -->
+    <Geom type="trimesh">
+      <data>mini_fridge_door.iv</data>
+      <Render>mini_fridge_door.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge">
+    <Body>base</Body>
+    <Body>fridge_door</Body>
+    <offsetfrom>fridge_door</offsetfrom>
+    <anchor>0.432 0.0166 0</anchor>
+      <axis>0 0 1</axis>
+    <limitsdeg>0 179</limitsdeg>
+  </Joint>
+
+  <Body name="widedoor1" type="dynamic">
+    <Translation> 0.648   -.0145    0.407</Translation>
+    <Body file="kitchenhandle1_padded.kinbody.xml">
+      <RotationMat>0 0 1 -1 0 0 0 -1 0</RotationMat>
+      <Translation>0.3925 -0.0095 0.129</Translation>
+    </Body>
+    <Geom type="trimesh">
+      <data>kitchen_door_wide_padded.iv</data>
+      <Render>kitchen_door_wide_padded.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge">
+    <Body>base</Body>
+    <Body>widedoor1</Body>
+    <offsetfrom>widedoor1</offsetfrom>
+    <limitsdeg>0 90</limitsdeg>
+    <anchor>0 0 0</anchor>
+      <axis>0 0 -1</axis>
+  </Joint>
+
+  <Body name="widedoor2" type="dynamic">
+    <rotationaxis>0 1 0 180</rotationaxis> 
+    <Translation>1.4875  -.0145    0.407</Translation>
+    <Body file="kitchenhandle1_padded.kinbody.xml">
+      <RotationMat>0 0 1 -1 0 0 0 -1 0</RotationMat>
+      <Translation>0.3925 -0.0095 -0.129</Translation>
+    </Body>
+    <Geom type="trimesh">
+      <data>kitchen_door_wide_padded.iv</data>
+      <Render>kitchen_door_wide_padded.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge">
+    <Body>base</Body>
+    <Body>widedoor2</Body>
+    <offsetfrom>widedoor2</offsetfrom>
+    <limitsdeg>0 90</limitsdeg>
+    <anchor>0 0 0</anchor>
+      <axis>0 0 1</axis>
+  </Joint>
+
+  <Body name="narrowdoor1" type="dynamic">
+    <Translation>0.0375   -.0145    0.407</Translation>
+    <Body file="kitchenhandle1_padded.kinbody.xml">
+      <RotationMat>0 0 1 -1 0 0 0 -1 0</RotationMat>
+      <Translation>0.2023 -0.0095 0.129</Translation>
+    </Body>
+    <Geom type="trimesh">
+      <data>kitchen_door_padded.iv</data>
+      <Render>kitchen_door_padded.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge">
+    <Body>base</Body>
+    <Body>narrowdoor1</Body>
+    <offsetfrom>narrowdoor1</offsetfrom>
+    <limitsdeg>0 90</limitsdeg>
+    <anchor>0 0 0</anchor>
+      <axis>0 0 -1</axis>
+  </Joint>
+
+  <Body name="narrowdoor2" type="dynamic">
+    <Translation>0.341   -.0145    0.407</Translation>
+    <Body file="kitchenhandle1_padded.kinbody.xml">
+      <RotationMat>0 0 1 -1 0 0 0 -1 0</RotationMat>
+      <Translation>0.2023 -0.0095 0.129</Translation>
+    </Body>
+    <Geom type="trimesh">
+      <data>kitchen_door_padded.iv</data>
+      <Render>kitchen_door_padded.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge">
+    <Body>base</Body>
+    <Body>narrowdoor2</Body>
+    <offsetfrom>narrowdoor2</offsetfrom>
+    <limitsdeg>0 90</limitsdeg>
+    <anchor>0 0 0</anchor>
+      <axis>0 0 -1</axis>
+  </Joint>
+
+  <Body name="narrowdoor3" type="dynamic">
+    <rotationaxis>0 1 0 180</rotationaxis> 
+    <Translation>1.792   -.0145    0.407</Translation>
+    <Body file="kitchenhandle1_padded.kinbody.xml">
+      <RotationMat>0 0 1 -1 0 0 0 -1 0</RotationMat>
+      <Translation>0.2144 -.0095 -0.129</Translation>
+    </Body>
+    <Geom type="trimesh">
+      <data>kitchen_door_padded.iv</data>
+      <Render>kitchen_door_padded.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge">
+    <Body>base</Body>
+    <Body>narrowdoor3</Body>
+    <offsetfrom>narrowdoor3</offsetfrom>
+    <limitsdeg>0 90</limitsdeg>
+    <anchor>0 0 0</anchor>
+      <axis>0 0 1</axis>
+  </Joint>
+
+  <Body name="drawer1" type="dynamic">
+    <Translation>0.0509 0 0.7237</Translation>
+    <RotationAxis>1 0 0 90</RotationAxis>
+    <Body file="kitchenhandle1_padded.kinbody.xml">
+      <RotationMat>0 1 0 0 0 1 1 0 0</RotationMat>
+      <Translation>0.0991 0.0613 0.0175</Translation>
+    </Body>
+    <Geom type="trimesh">
+      <data>kitchen_drawer_padded.iv</data>
+      <Render>kitchen_drawer_padded.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="slider">
+    <Body>base</Body>
+    <Body>drawer1</Body>
+    <offsetfrom>drawer1</offsetfrom>
+    <limitsdeg>0 0.41</limitsdeg>
+    <anchor>0 0 0</anchor>
+      <axis>0 0 1</axis>
+  </Joint>
+  
+  <Body name="drawer2" type="dynamic">
+    <Translation>0.3583 0 0.7237</Translation>
+    <RotationAxis>1 0 0 90</RotationAxis>
+    <Body file="kitchenhandle1_padded.kinbody.xml">
+      <RotationMat>0 1 0 0 0 1 1 0 0</RotationMat>
+      <Translation>0.0991 0.0613 0.0175</Translation>
+    </Body>
+    <Geom type="trimesh">
+      <data>kitchen_drawer_padded.iv</data>
+      <Render>kitchen_drawer_padded.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="slider">
+    <Body>base</Body>
+    <Body>drawer2</Body>
+    <offsetfrom>drawer2</offsetfrom>
+    <limitsdeg>0 0.41</limitsdeg>
+    <anchor>0 0 0</anchor>
+      <axis>0 0 1</axis>
+  </Joint>
+
+  <Body name="drawer3" type="dynamic">
+    <Translation>1.5737 0 0.7237</Translation>
+    <RotationAxis>1 0 0 90</RotationAxis>
+    <Body file="kitchenhandle1_padded.kinbody.xml">
+      <RotationMat>0 1 0 0 0 1 1 0 0</RotationMat>
+      <Translation>0.0991 0.0613 0.0175</Translation>
+    </Body>
+    <Geom type="trimesh">
+      <data>kitchen_drawer_padded.iv</data>
+      <Render>kitchen_drawer_padded.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="slider">
+    <Body>base</Body>
+    <Body>drawer3</Body>
+    <offsetfrom>drawer3</offsetfrom>
+    <limitsdeg>0 0.41</limitsdeg>
+    <anchor>0 0 0</anchor>
+      <axis>0 0 1</axis>
+  </Joint>
+
+</KinBody>

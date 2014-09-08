@@ -1,0 +1,1 @@
+/home/rdu/Workspace/cbirrt/comps/planning/generalik/../../plugins/libGeneralIK.so

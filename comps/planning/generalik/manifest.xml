@@ -1,0 +1,17 @@
+<package>
+  <description brief="generalik">
+     generalik
+  </description>
+  <author>Dmitry Berenson</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/generalik</url>
+  <depend package="openrave"/>
+  <rosdep name="libqhull-dev"/>
+  <rosdep name="libnewmat10-dev"/>
+  <export>
+    <openrave plugins="${prefix}/lib"/>
+  </export>
+</package>
+
+

@@ -1,0 +1,8 @@
+<KinBody name="dasani">
+  <Body type="static">
+    <Geom type="trimesh">
+      <Data>dasani_padded.iv</Data>
+      <Render>dasani.iv</Render>
+    </Geom>      
+  </Body>
+</KinBody>

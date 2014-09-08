@@ -1,0 +1,74 @@
+<KinBody name="fridge">
+<Body name="fridgebody">
+  <!-- horizontal shelf -->
+  <Geom type="box">
+    <Translation>0.35 0 -0.5</Translation>
+    <extents>0.35 0.4 0.01</extents>
+    <diffusecolor>0.8 0.8 0.8</diffusecolor>
+  </Geom>
+  <Geom type="box">
+    <Translation>0.35 0 1.5</Translation>
+    <extents>0.35 0.4 0.01</extents>
+    <diffusecolor>0.8 0.8 0.8</diffusecolor>
+  </Geom>
+  <Geom type="box">
+    <Translation>0.3 0 -0.1</Translation>
+    <extents>0.3 0.4 0.01</extents>
+    <diffusecolor>0.8 0.8 0.8</diffusecolor>
+  </Geom>
+  <Geom type="box">
+    <Translation>0.35 0 0.9450</Translation>
+    <extents>0.35 0.4 0.01</extents>
+    <diffusecolor>0.8 0.8 0.8</diffusecolor>
+  </Geom>
+  <!-- vertical -->
+  <Geom type="box">
+    <Translation>0.35 0.4 0.5</Translation>
+    <extents>0.35 0.01 1</extents>
+    <diffusecolor>0.8 0.8 0.8</diffusecolor>
+  </Geom>
+  <Geom type="box">
+    <Translation>0.35 -0.4 0.5</Translation>
+    <extents>0.35 0.01 1</extents>
+    <diffusecolor>0.8 0.8 0.8</diffusecolor>
+  </Geom>
+  <Geom type="box">
+    <Translation>0 0 0.5</Translation>
+    <extents>0.01 0.4 1</extents>
+    <diffusecolor>0.8 0.8 0.8</diffusecolor>
+  </Geom>
+  <!--freezer door-->
+  <Geom type="box">
+    <Translation>0.7 0 1.22</Translation>
+    <extents>0.01 0.4 0.275</extents>
+    <diffusecolor>0.5235 0.5235 0.7235</diffusecolor>
+  </Geom>
+   <!--bottom draweres -->
+  <Geom type="box">
+    <Translation>0.6 0 -0.3</Translation>
+    <extents>0.01 0.4 0.2</extents>
+    <diffusecolor>0.5235 0.5235 0.7235</diffusecolor>
+  </Geom>
+
+</Body>
+<Body name="fridgedoor">
+  <Geom type="box">
+    <Translation>1.1 0.4 0.225</Translation>
+    <extents>0.4 0.01 0.725</extents>
+    <diffusecolor>0.5235 0.5235 0.7235</diffusecolor>
+  </Geom>
+</Body>
+
+<Joint type="hinge">
+    <Body>fridgebody</Body>
+    <Body>fridgedoor</Body>
+    <offsetfrom>fridgebody</offsetfrom>
+    <lostop>-90</lostop>
+    <histop>179</histop>
+    <anchor>0.7 0.4 1</anchor>
+    <axis>0 0 -1</axis>
+</Joint>
+
+
+
+</KinBody>

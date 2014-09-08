@@ -1,0 +1,12 @@
+<KinBody name="test">
+<Body name="body" type="static">
+
+  <Translation>0 0 0</Translation>
+  <Geom type="trimesh">
+    <data>models/objects/mug2convex.iv</data>
+    <Render>models/objects/mug2convex.iv</Render>
+  </Geom>
+  </Body>
+
+
+</KinBody>

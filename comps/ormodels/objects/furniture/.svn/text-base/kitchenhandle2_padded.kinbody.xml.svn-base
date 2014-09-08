@@ -1,0 +1,33 @@
+<Body>
+  <Geom type="cylinder">
+  <!-- 12mm diam handle, 42mm away from door surface (spacers installed) -->
+    <translation>0.042 0 0</translation>
+    <!-- padded by .015 -->
+    <radius>0.01</radius>
+    <height>0.25</height>
+  </Geom>
+  <Geom type="box" render="false">
+    <extents>0.03 0.035 0.02</extents>
+    <translation>0.021 0.095 0</translation>
+  </Geom>
+  <Geom type="box" render="false">
+    <extents>0.03 0.035 0.02</extents>
+    <translation>0.021 -0.095 0</translation>
+  </Geom>
+  <Geom type="cylinder">
+  <!-- 10mm diam support, 8cm from center -->
+    <translation>0.021 0.08 0</translation>
+    <!-- padded by .015 -->
+    <radius>0.01</radius>
+    <height>0.042</height>
+    <rotationaxis>0 0 1 90</rotationaxis>
+  </Geom>
+  <Geom type="cylinder">
+  <!-- 10mm diam support 8cm in other direction-->
+    <translation>0.021 -0.08 0</translation>
+    <!-- padded by .015 -->
+    <radius>0.01</radius>
+    <height>0.042</height>
+    <rotationaxis>0 0 1 90</rotationaxis>
+  </Geom>
+</Body>

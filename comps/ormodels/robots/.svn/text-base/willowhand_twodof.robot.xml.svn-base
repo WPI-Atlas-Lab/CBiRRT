@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<Robot>
+  <KinBody name="WillowHand">
+    <Body name="palm" type="dynamic">
+        <Geom type="trimesh">
+            <data>../../openrave_local/models/willow/pr2_hand_palm.iv</data>
+            <Render>../../openrave_local/models/willow/pr2_hand_palm.iv</Render>
+         </Geom>
+    </Body>
+    <Body name="link1r" type="dynamic">
+        <offsetfrom>palm</offsetfrom>
+        <Translation> 0.01 0 0</Translation>
+        <RotationMat> 1 0 0 0 0 1 0 -1 0</RotationMat>
+        <Geom type="trimesh">
+            <data>../../openrave_local/models/willow/pr2_hand_link1.iv</data>
+            <Render>../../openrave_local/models/willow/pr2_hand_link1.iv</Render>
+         </Geom>
+    </Body>
+
+    <Joint type="hinge" name="JR1">
+      <Body>palm</Body>
+      <Body>link1r</Body>
+      <offsetfrom>link1r</offsetfrom>
+      <weight>4</weight>
+      <lostop>0</lostop>
+      <histop>30</histop>
+      <axis>0 -1 0</axis>
+      <maxvel>2</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+
+    <Body name="link2r" type="dynamic">
+        <offsetfrom>palm</offsetfrom>
+        <Translation>0.01 0 -0.0375</Translation>
+        <RotationMat>1 0 0 0 0 1 0 -1 0</RotationMat>
+        <Geom type="trimesh">
+            <data>../../openrave_local/models/willow/pr2_hand_link5.iv</data>
+            <Render>../../openrave_local/models/willow/pr2_hand_link5.iv</Render>
+         </Geom>
+    </Body>
+
+    <Joint type="hinge" name="JR2" enable="false" mimic="JR1 2 0">
+      <Body>palm</Body>
+      <Body>link2r</Body>
+      <offsetfrom>link2r</offsetfrom>
+      <weight>4</weight>
+      <lostop>0</lostop>
+      <histop>60</histop>
+      <axis>0 -1 0</axis>
+      <maxvel>2</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+    <Body name="link3r" type="dynamic">
+        <offsetfrom>link1r</offsetfrom>
+        <Translation>0.05103 0.075948 0</Translation>
+        <Geom type="trimesh">
+            <data>../../openrave_local/models/willow/pr2_hand_link2.iv</data>
+            <Render>../../openrave_local/models/willow/pr2_hand_link2.iv</Render>
+         </Geom>
+    </Body>
+
+    <Joint type="hinge" name="JR3" enable="false" mimic="JR1 1 0">
+      <Body>link1r</Body>
+      <Body>link3r</Body>
+      <offsetfrom>link3r</offsetfrom>
+      <weight>4</weight>
+      <lostop>0</lostop>
+      <histop>30</histop>
+      <axis>0 0 1</axis>
+      <maxvel>2</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+
+<!--left finger (purple up)-->
+   <Body name="link1l" type="dynamic">
+        <offsetfrom>palm</offsetfrom>
+        <Translation> -0.01 0 0</Translation>
+        <RotationMat> -1 0 0 0 0 -1 0 -1 0</RotationMat>
+        <Geom type="trimesh">
+            <data>../../openrave_local/models/willow/pr2_hand_link1.iv</data>
+            <Render>../../openrave_local/models/willow/pr2_hand_link1.iv</Render>
+         </Geom>
+    </Body>
+
+    <Joint type="hinge" name="JL1">
+      <Body>palm</Body>
+      <Body>link1l</Body>
+      <offsetfrom>link1l</offsetfrom>
+      <weight>4</weight>
+      <lostop>0</lostop>
+      <histop>30</histop>
+      <axis>0 1 0</axis>
+      <maxvel>2</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+    <Body name="link2l" type="dynamic">
+        <offsetfrom>palm</offsetfrom>
+        <Translation>-0.01 0 -0.0375</Translation>
+        <RotationMat>-1 0 0 0 0 -1 0 -1 0</RotationMat>
+        <Geom type="trimesh">
+            <data>../../openrave_local/models/willow/pr2_hand_link5.iv</data>
+            <Render>../../openrave_local/models/willow/pr2_hand_link5.iv</Render>
+         </Geom>
+    </Body>
+
+    <Joint type="hinge" name="JL2" enable="false" mimic="JL1 2 0">
+      <Body>palm</Body>
+      <Body>link2l</Body>
+      <offsetfrom>link2l</offsetfrom>
+      <weight>4</weight>
+      <lostop>0</lostop>
+      <histop>60</histop>
+      <axis>0 1 0</axis>
+      <maxvel>2</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+    <Body name="link3l" type="dynamic">
+        <offsetfrom>link1l</offsetfrom>
+        <Translation>0.05103 0.075948 0</Translation>
+        <Geom type="trimesh">
+            <data>../../openrave_local/models/willow/pr2_hand_link2.iv</data>
+            <Render>../../openrave_local/models/willow/pr2_hand_link2.iv</Render>
+         </Geom>
+    </Body>
+
+    <Joint type="hinge" name="JL3" enable="false" mimic="JL1 1 0">
+      <Body>link1l</Body>
+      <Body>link3l</Body>
+      <offsetfrom>link3l</offsetfrom>
+      <weight>4</weight>
+      <lostop>0</lostop>
+      <histop>30</histop>
+      <axis>0 0 1</axis>
+      <maxvel>2</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+        <adjacent>link1r link1l</adjacent>
+        <adjacent>link2r link3r</adjacent>
+        <adjacent>link2l link3l</adjacent>
+    </KinBody>
+
+    <Manipulator>
+        <base>palm</base>
+        <effector>palm</effector>
+        <Translation>0 0 -0.045</Translation>
+        <joints>JR1 JL1</joints>
+        <opened>0 0</opened>
+        <closed>30 30</closed>
+    </Manipulator>
+</Robot>

@@ -1,0 +1,8 @@
+<KinBody name="peanut_butter_jar">
+  <Body type="static">
+    <Geom type="trimesh">
+      <Data>peanut_butter_jar.iv</Data>
+      <Render>peanut_butter_jar.iv</Render>
+    </Geom>      
+  </Body>
+</KinBody>

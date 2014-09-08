@@ -1,0 +1,9 @@
+<KinBody name="table">
+
+  <Body name="table" type="dynamic">
+    <Geom type="box">
+       <extents>0.2 0.2 0.7</extents>
+       <diffuseColor>0.9 0.9 0.9</diffuseColor>
+    </Geom>
+  </Body>
+</KinBody>

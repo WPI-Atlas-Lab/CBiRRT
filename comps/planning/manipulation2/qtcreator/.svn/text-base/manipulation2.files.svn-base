@@ -1,0 +1,6 @@
+../trajectoryproblem.h
+../manipulation.h
+../trajectoryproblem.cpp
+../manipulationmain.cpp
+../manipulation.cpp
+../stdafx.h

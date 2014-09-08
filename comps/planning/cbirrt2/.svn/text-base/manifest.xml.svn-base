@@ -1,0 +1,16 @@
+<package>
+  <description brief="cbirrt2">
+     cbirrt2
+  </description>
+  <author>Dmitry Berenson</author>
+  <license>BSD-new</license>
+  <review status="unreviewed" notes=""/>
+  <depend package="openrave"/>
+  <depend package="generalik"/>
+  <rosdep name="libqhull-dev"/>
+  <rosdep name="libnewmat10-dev"/>
+  <export>
+    <python path="${prefix}/src"/>
+    <openrave plugins="${prefix}/lib"/>
+  </export>
+</package>

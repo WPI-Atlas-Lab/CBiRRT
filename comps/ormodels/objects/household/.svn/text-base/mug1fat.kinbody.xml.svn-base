@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <KinBody>
+     <RotationAxis>0 1 0 -90</RotationAxis>
+    <Body type="dynamic">
+      <Geom type="cylinder">
+        <Translation>0 0.065 0</Translation>
+        <diffuseColor>0.5 0 0</diffuseColor>
+        <radius>0.065</radius>
+        <height>0.14</height>
+      </Geom>
+
+
+       <Geom type="box">
+	    <Translation>0.07 0.06 0</Translation>
+        <extents>0.03 0.04 0.03</extents>
+        <diffuseColor>0.5 0 0</diffuseColor>
+      </Geom>
+
+      <!-- need this to get around crappy ODE contact normals -->
+       <Geom type="box">
+	    <Translation>0 0.065 0</Translation>
+        <extents>0.045 0.071 0.045</extents>
+        <diffuseColor>0.5 0 0</diffuseColor>
+      </Geom>
+    </Body>
+
+
+    
+    <visiontracking>
+      <modelname>data/intel/mug1.kinbody.xml</modelname>
+    </visiontracking>
+
+  </KinBody>

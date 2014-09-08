@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<KinBody>
+    <Body name="body" type="static">
+        <Translation>0 0 0</Translation>
+        <Geom type="trimesh">
+            <data>models/objects/pitcher.iv 0.001</data>
+            <Render>models/objects/pitcher.iv 0.001</Render>
+        </Geom>
+    </Body>
+</KinBody>

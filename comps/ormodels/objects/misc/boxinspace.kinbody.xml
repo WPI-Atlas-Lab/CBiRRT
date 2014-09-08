@@ -1,0 +1,10 @@
+<KinBody name="Box3x3_">
+  <Body type="dynamic">
+    <Geom type="box">
+      <Translation>214 -346 644</Translation>
+      <extents>0.01 0.01 0.01</extents>
+      <diffusecolor>1 0 0</diffusecolor>
+    </Geom>        
+  </Body>
+
+</KinBody>

@@ -1,0 +1,27 @@
+<KinBody name="pan">
+  <Body type="dynamic"> 	  	
+	<Geom type="trimesh">
+      <Data>objects/household/frying_pan.iv</Data>
+	  <Render>objects/household/frying_pan.iv</Render>
+    </Geom>        
+	<!-- pan body primitive 
+      <Geom type="cylinder">
+		<RotationAxis>1 0 0 90</RotationAxis>
+        <diffuseColor>0.4 0.4 0.5</diffuseColor>
+        <radius>0.12</radius>
+        <height>0.035</height>
+      </Geom>      
+     -->
+     <!-- handle primitive:
+     <Geom type="cylinder">
+	  	<Translation>0.17 0 0.02</Translation>
+	  	<RotationAxis>-.2 0 1 90</RotationAxis>
+	  	<height>0.15</height>
+	  	<radius>0.015</radius>
+	  	<diffuseColor>0.3 0.3 0.4</diffuseColor>
+	</Geom> 
+	-->
+ </Body>
+</KinBody>
+    
+

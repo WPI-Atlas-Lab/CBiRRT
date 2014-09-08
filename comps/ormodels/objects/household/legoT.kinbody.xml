@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <KinBody name="legoT">
+    <RotationAxis>0 1 0 -90</RotationAxis>
+    <Body type="static">
+      <Geom type="box">
+	    <Translation>-0.0038 0.087 0.0022</Translation>
+        <extents>0.016 0.087 0.016</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>1 0 0</diffuseColor>
+      </Geom>
+      <Geom type="box">
+	    <Translation>-0.0038 0.196 0.0022</Translation>
+        <extents>0.1115 0.022 0.01505</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>1 0 0</diffuseColor>
+      </Geom>
+      <!-- add spheres for the markers -->
+      <Geom type="sphere">
+        <Translation>-0.038869339 0.100173843 0.010296912</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>0.003623238 0.013190157 -0.026352037</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>-0.005385303 0.160337051 0.038944511</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>-0.011999622 0.012718820 0.039690514</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>0.027747707 0.074367188 0.006835703</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+    </Body>
+    <mocap>
+      <name>legoT.prj</name>
+    <!-- <markers>30.201214 -4.027240 101.378075    -12.422246 -37.368618 13.237194    9.150125 32.924816 167.579483    9.696778 26.428101 14.396081    -37.766438 -3.779856 75.440544</markers> -->
+        <markers>-38.869339 -10.296912 100.173843    3.623238 26.352037 13.190157     -5.385303 -38.944511 160.337051     -11.999622 -39.690514 12.718820   27.747707 -6.835703 74.367188</markers>
+    </mocap>
+
+
+    <mass type="sphere">
+      <total>10</total>
+      <radius>1</radius>
+    </mass>
+  </KinBody>

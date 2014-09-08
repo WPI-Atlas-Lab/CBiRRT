@@ -1,0 +1,10 @@
+<KinBody name="laser_scan">
+    <modelsdir>.</modelsdir>
+
+    <Body name="scan" type="static">
+        <Geom type="trimesh">
+            <data>clean_kitchen.iv</data>
+            <Render>clean_kitchen.iv</Render>
+        </Geom>
+    </Body>
+</Kinbody>

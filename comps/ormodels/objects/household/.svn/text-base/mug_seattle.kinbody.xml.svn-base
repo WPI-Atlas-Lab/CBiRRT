@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<KinBody>
+    <modelsdir>.</modelsdir>
+    <Body name="crank" type="dynamic">
+        <Geom type="trimesh">
+            <data>mug_seattle.iv</data>
+            <Render>mug_seattle.iv</Render>
+        </Geom>
+    </Body>
+</KinBody>
+

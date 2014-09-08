@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Robot name="Herb2">
+ <KinBody file="herb_base.kinbody.xml"/>
+
+ <KinBody file="side_by_side_wams_for_voxel_checking.kinbody.xml"/>
+
+    <KinBody>
+        <!--<translation>-0.0892 0.2184 0.7424</translation>-->
+        <!--<rotationmat>0 1 0 -1 0 0 0 0 1</rotationmat>-->
+
+        <modelsdir>.</modelsdir>
+        <Body name="/left/wam7">
+            <Geom name="box_around_hand_for_voxel_filtering_left" type="box">
+                <extents>0.1 0.1 0.1</extents>
+                <translation>0.0 0.0 0.20</translation>
+                <diffuseColor>1 1 0</diffuseColor>
+            </Geom>
+        </Body>
+    </KinBody>
+
+    <KinBody>
+        <!--<translation>-0.0892 0.2184 0.7424</translation>-->
+        <!--<rotationmat>0 1 0 -1 0 0 0 0 1</rotationmat>-->
+
+        <modelsdir>.</modelsdir>
+        <Body name="/right/wam7">
+            <Geom name="box_around_hand_for_voxel_filtering_right" type="box">
+                <extents>0.1 0.1 0.1</extents>
+                <translation>0.0 0.0 0.20</translation>
+                <diffuseColor>1 1 0</diffuseColor>
+            </Geom>
+        </Body>
+    </KinBody>
+
+
+</Robot>
+
+

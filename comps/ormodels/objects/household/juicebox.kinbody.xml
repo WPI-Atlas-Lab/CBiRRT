@@ -1,0 +1,10 @@
+<KinBody name="juicebox">
+  <!-- Apple & Eve 6.75oz 100% Apple Juice
+       UPC 0-76301-00010-0   -->
+  <Body type="static">
+    <Geom type="trimesh">
+      <Data>juicebox_padded.iv</Data>
+      <Render>juicebox.iv</Render>
+    </Geom>      
+  </Body>
+</KinBody>

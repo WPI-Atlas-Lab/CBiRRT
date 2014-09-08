@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Robot>
+  <KinBody name="finger">
+    <Body name="prox" type="dynamic">
+      <Translation>0.0  0.0  0.0</Translation>
+      <Geom type="trimesh">
+        <Data>../models/bones/middle_prox_phal.iv</Data>
+        <Render>../models/bones/middle_prox_phal.iv</Render>
+       </Geom>
+
+    </Body>
+    <Body name="mid" type="dynamic">
+                        <!-- 0.0834 0 0.1445-->
+
+      <rotationmat>-0.5000 -0.0000 -0.8660 0.0000 -1.0000 0.0000 -0.8660 -0.0000 0.5000</rotationmat>
+      <Translation>0.02693 0 0.04665</Translation>
+      <offsetfrom>prox</offsetfrom>
+      <Geom type="trimesh">
+        <Data>../models/bones/middle_mid_phal.iv</Data>
+        <Render>../models/bones/middle_mid_phal.iv</Render>
+      </Geom>
+      <mass type="sphere">
+        <total>1</total>
+        <radius>1</radius>
+      </mass>
+    </Body>
+
+    <Joint type="hinge">
+      <Body>prox</Body>
+      <Body>mid</Body>
+      <offsetfrom>mid</offsetfrom>
+      <weight>4</weight>
+      <lostop>0</lostop>
+      <histop>100</histop>
+      <axis>0 -1 0</axis>
+      <pid>200 5 100</pid>
+      <maxvel>5</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+    <Body name="dist" type="dynamic">
+    <!-- -0.1107 0 0-->
+      <Translation>-0.0357 0 0</Translation>
+      <offsetfrom>mid</offsetfrom>
+      <Geom type="trimesh">
+        <Data>../models/bones/middle_dist_phal.iv</Data>
+        <Render>../models/bones/middle_dist_phal.iv</Render>
+      </Geom>
+      <mass type="sphere">
+        <total>1</total>
+        <radius>1</radius>
+      </mass>
+    </Body>
+
+    <Joint type="hinge">
+      <Body>mid</Body>
+      <Body>dist</Body>
+      <offsetfrom>dist</offsetfrom>
+      <weight>3</weight>
+      <lostop>0</lostop>
+      <histop>80</histop>
+      <axis>0 1 0</axis>
+      <pid>400 250 100</pid>
+      <maxvel>4</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+
+  </KinBody>
+
+
+
+</Robot>

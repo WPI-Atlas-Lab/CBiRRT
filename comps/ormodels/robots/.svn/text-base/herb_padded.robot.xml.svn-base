@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sidd comments 3:19pm Monday July 9 2007 -->
+<!-- Joint 1 is rotating clockwise -->
+<!-- Joint 2 is rotating clockwise -->
+<!-- Joint 3 is rotating clockwise -->
+<!-- Joint 4 is rotating correctly but the IV file is flipped 180 degrees -->
+<!-- Joint 5 is rotating clockwise. Also, it's IV file seems to include the preceeding link. The preceeding link is correctly aligned but the actual link is 1 radian CCW along the true Z axis -->
+<!-- Joint 6 is rotating clockwise. Also, the rotation axis is incorrect -->
+<!-- Joint 7 is probably rotating CW, can't visualize it. -->
+<!-- Added palm. It's rotating weirdly. The fingers seem to rotate independant of the palm -->
+<!-- Ideally, the palm should be in it's own XML file, but loading files inside files is not working -->
+
+<Robot name="BarrettWAM" file="barrettwam_padded.robot.xml">
+  <KinBody>
+    <translation>-0.0892 0.2184 0.7424</translation>
+    <rotationmat>0 1 0 -1 0 0 0 0 1</rotationmat>
+
+    <modelsdir>.</modelsdir>
+    <Body name="wam0">
+<!--       <Geom name="segway" type="trimesh">
+        <translation>0.2184 0.0892 -0.7424</translation>
+        <rotationmat>0 -1 0 1 0 0 0 0 1</rotationmat>
+        <data>models/segway/idf_segway_bottom_origin.iv</data>
+        <render>models/segway/idf_segway_bottom_origin.iv</render>
+      </Geom> -->
+      <Geom name="segway" type="box">
+        <translation>0.2184 0.0892 -0.7424</translation>
+        <rotationmat>0 -1 0 1 0 0 0 0 1</rotationmat>
+        <render>segway/idf_segway_bottom_origin.iv</render>
+        <extents>0.01 0.01 0.01</extents>
+      </Geom>
+      <Geom name="segway_col" type="cylinder" render="false">
+        <translation>0.2184 0.0892 -0.1</translation>
+        <rotationaxis>1 0 0 90</rotationaxis>
+        <radius>0.31</radius>
+        <height>0.2</height>
+      </Geom>
+      <Geom name="touchscreen" type="trimesh">
+        <translation>0.421 0.115 -0.013</translation>
+        <rotationmat>0 -1 0 1 0 0 0 0 1</rotationmat>
+        <data>segway/touchscreen.iv</data>
+        <render>segway/touchscreen.iv</render>
+      </Geom>
+
+    </Body>
+    <Body name="wam1">
+     <Geom name="mast" type="box">
+       <translation>-0.0625 -0.1245 0.22</translation>
+       <extents>0.0125 0.0125 0.3</extents>
+     </Geom>
+     <Geom name="mast_col" type="box" >
+       <translation>-0.0625 -0.1245 0.22</translation>
+       <extents>0.045 0.025 0.3</extents>
+       <diffusecolor>1 0 0</diffusecolor>
+     </Geom>
+     <Geom name="laser_motor" type="box">
+       <translation>-0.0475 -0.162 0.48</translation>
+       <extents>0.0475 0.025 0.04</extents>
+     </Geom>
+     <Geom name="laser_hokuyo" type="box">
+       <translation>0.07 -0.162 0.49</translation>
+       <extents>0.14 0.06 0.065</extents>
+     </Geom>
+     <Geom name="camera1_col" type="box">
+       <translation>0.0 -0.162 0.3</translation>
+       <extents>0.05 0.05 0.05</extents>
+       <diffusecolor>0.5 0.5 0</diffusecolor>
+     </Geom>
+
+
+			<!--
+      <Geom name="mast" type="trimesh">
+        <translation>0 0 -0.1143</translation>
+        <data>accessories/laser_mast.iv</data>
+        <render>accessories/laser_mast.iv</render>
+      </Geom>
+      <Geom name="mast_col" type="box" render="false">
+        <translation>0.062502   0.124575   0.15</translation>
+        <extents>0.03 0.03 0.27</extents>
+      </Geom>
+      <Geom name="camera1_col" type="box" render="false">
+        <extents>0.055 0.03 0.02</extents>
+        <translation>0.09 0.1573 0.2097</translation>
+      </Geom>
+      <Geom name="camera1" type="box">
+        <extents>0.03 0.015 0.015</extents>
+        <translation>0.08 0.1523 0.2097</translation>
+      </Geom>
+      <Geom name="camera2_col" type="box" render="false">
+        <extents>0.055 0.07 0.04</extents>
+        <translation>0.09 0.1673 0.15</translation>
+      </Geom>
+      <Geom name="camera2" type="box">
+        <extents>0.03 0.015 0.025</extents>
+        <translation>0.08 0.1523 0.15</translation>
+      </Geom>
+			-->
+    </Body>
+    <!--
+    <Body name="wam4">
+      <Geom name="cameras" type="trimesh">
+        <translation>-0.0533 -0.2285 0</translation>
+        <rotationmat>0 -1 0 0 0 1 -1 0 0</rotationmat>
+        <data>accessories/WAM_forearm_camera_pair.iv</data>
+        <render>models/WAM_forearm_camera_pair.iv</render>
+      </Geom>
+    </Body>-->
+<!--    <Body name="wam7">
+        <Geom name="palmcamgeom_box1" type="box">
+            <extents>0.0265 0.0305 0.01</extents>
+            <translation>0.0 0.0 0.165</translation>
+            <diffuseColor>1 1 0</diffuseColor>
+        </Geom>
+        <Geom name="palmcamgeom_box2" type="box">
+            <extents>0.015 0.005825 0.01</extents>
+            <translation>0.0 -0.0363 0.165</translation>
+            <diffuseColor>1 1 0</diffuseColor>
+        </Geom>
+        <Geom name="palmcamgeom_box3" type="box">
+            <extents>0.015 0.005825 0.01</extents>
+            <translation>0.0 0.0363 0.165</translation>
+            <diffuseColor>1 1 0</diffuseColor>
+        </Geom>
+        <Geom name="palmcamgeom_cyl1" type="cylinder">
+            <radius>0.01165</radius>
+            <height>0.02</height>
+            <translation>-0.015 -0.0305 0.165</translation>
+            <rotationmat>1 0 0 0 0 -1 0 1 0</rotationmat>
+            <diffuseColor>1 1 0</diffuseColor>
+        </Geom>
+        <Geom name="palmcamgeom_cyl2" type="cylinder">
+            <radius>0.01165</radius>
+            <height>0.02</height>
+            <translation>0.015 -0.0305 0.165</translation>
+            <rotationmat>1 0 0 0 0 -1 0 1 0</rotationmat>
+            <diffuseColor>1 1 0</diffuseColor>
+        </Geom>
+        <Geom name="palmcamgeom_cyl3" type="cylinder">
+            <radius>0.01165</radius>
+            <height>0.02</height>
+            <translation>0.015 0.0305 0.165</translation>
+            <rotationmat>1 0 0 0 0 -1 0 1 0</rotationmat>
+            <diffuseColor>1 1 0</diffuseColor>
+        </Geom>
+        <Geom name="palmcamgeom_cyl4" type="cylinder">
+            <radius>0.01165</radius>
+            <height>0.02</height>
+            <translation>-0.015 0.0305 0.165</translation>
+            <rotationmat>1 0 0 0 0 -1 0 1 0</rotationmat>
+            <diffuseColor>1 1 0</diffuseColor>
+        </Geom>
+    </Body>-->
+    
+  </KinBody>
+
+  <!-- attach a camera 
+  <AttachedSensor name="localizationcam">
+    <link>wam1</link>
+<rotationmat>0.0211 0.0059 0.9998 -0.0044 -1 0.006 0.9998 -0.0046 -0.0211</rotationmat>
+<translation>0.1271 0.1654 0.2256</translation>
+    <sensor type="BaseCamera" args="">
+      <KK>658.88052 659.26065 309.59158 245.12456</KK>
+      <width>640</width>
+      <height>480</height>
+      <framerate>5</framerate>
+      <color>0.5 0.5 1</color>
+      <power>0</power>
+    </sensor>
+  </AttachedSensor>
+  <AttachedSensor name="objdetcam">
+    <link>wam1</link>
+
+	<rotationmat>0.009938 0.26278 0.96482 0.99993 -0.008094 -0.008096 0.005682 0.96482 -0.26284</rotationmat>
+    <translation>0.11278 0.18239 0.11452</translation>
+    <sensor type="BaseCamera" args="">
+      <KK>1105.598293 1107.389546 332.57223 250.66524</KK>
+      <width>640</width>
+      <height>480</height>
+      <framerate>5</framerate>
+      <color>0.5 0.5 1</color>
+      <power>0</power>
+    </sensor>
+  </AttachedSensor>-->
+<!--   <AttachedSensor name="wristcam">
+    <link>wam4</link>
+    <translation>-0.1 -0.2285 0</translation>
+    <rotationmat>0 0 -1 1 0 0 0 -1 0</rotationmat>
+    <rotationaxis>1 0 0 90</rotationaxis>
+    <sensor type="BaseCamera" args="">
+      <KK>531.9022 528.6482 317.8913 226.9209</KK>
+      <width>640</width>
+      <height>480</height>
+      <framerate>5</framerate>
+      <color>0.5 0.5 1</color>
+      <power>0</power>
+    </sensor>
+  </AttachedSensor> -->
+
+  <!-- attach the laser -->
+  <AttachedSensor name="segwaylaser">
+    <link>wam0</link>
+    <!--<rotationmat>0 1 0 1 0 0 0 0 -1</rotationmat>-->
+    <!--<rotationmat>1 0 0 0 1 0 0 0 1</rotationmat>-->
+    <rotationaxis>0 0 1 90</rotationaxis>
+    <translation>0.2125 0.392 -0.402</translation>
+    <sensor type="ROSLaser2D">
+      <scantopic>/scan</scantopic>
+<!--       <master>http://personalrobotics:11311</master> -->
+      <color>0.5 0.5 1</color>
+      <show>1</show>
+    </sensor>
+  </AttachedSensor>
+</Robot>

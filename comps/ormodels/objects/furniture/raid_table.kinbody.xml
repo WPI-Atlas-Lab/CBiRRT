@@ -1,0 +1,10 @@
+<!-- Table is 50in long, 30in wide, 40in high -->
+<KinBody name="raid_table">
+
+  <Body name="raid_table">
+    <Geom type="trimesh">
+      <Data>raid_table.iv 1.0</Data>
+      <Render>raid_table.iv  1.0</Render>
+    </Geom>
+  </Body>
+</KinBody>

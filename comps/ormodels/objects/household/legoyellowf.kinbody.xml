@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <KinBody name="legoyellow">
+    <RotationAxis>0 1 0 90</RotationAxis>
+    <Body type="static">
+      <Geom type="box">
+        <Translation>-0.01 0.1115 0</Translation>
+        <extents>0.0415 0.1315 0.03505</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>1 1 0</diffuseColor>
+      </Geom>
+      <Geom type="box">
+        <Translation>0.0375 0.2078 0</Translation>
+        <extents>0.0875 0.0350 0.05075</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>1 1 0</diffuseColor>
+      </Geom>
+      <Geom type="box">
+        <Translation>-0.043 0.2078 0</Translation>
+        <extents>0.0215 0.01505 0.01505</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>1 1 0</diffuseColor>
+      </Geom>
+      <Geom type="box">
+        <Translation>-0.068715 0.01505 0</Translation>
+        <extents>0.1085 0.03505 0.03505</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>1 1 0</diffuseColor>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>-0.006891353 0.210868713 -0.035528866</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>-0.031746134 0.049438297 -0.006059282</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>0.016567381 0.014186113 -0.036406574</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>-0.010611270 0.218190750 0.029368618</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>-0.079600204 0.018167646 0.029319498</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>-0.136402466 0.052923882 -0.006344173</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+    </Body>
+    <mocap>
+      <name>legoY.prj</name>
+      <markers>6.891353 -35.528866 210.868713     31.746134 -6.059282 49.438297    -16.567381 -36.406574 14.186113    10.611270 29.368618 218.190750    79.600204 29.319498 18.167646    136.402466 -6.344173 52.923882</markers>
+    </mocap>
+    <mass type="sphere">
+      <total>10</total>
+      <radius>1</radius>
+    </mass>
+  </KinBody>

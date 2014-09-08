@@ -1,0 +1,4 @@
+<Environment>
+    <KinBody name="kitchen" file="./clean_kitchen.kinbody.xml">
+    </KinBody>
+</Environment>

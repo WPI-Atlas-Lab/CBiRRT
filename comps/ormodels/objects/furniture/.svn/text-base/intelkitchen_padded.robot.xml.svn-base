@@ -1,0 +1,10 @@
+<Robot name="intelkitchen">
+  <KinBody name="smalltable1" file="intelkitchen_padded_withoutrender.kinbody.xml">
+  </KinBody>
+    <Manipulator name="dummy">
+        <base>base</base>
+        <effector>drawer3</effector>
+        <armjoints>J14</armjoints>
+        <!--<joints>JF1 JF2 JF3</joints>-->
+     </Manipulator>  
+</Robot>

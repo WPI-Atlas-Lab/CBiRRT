@@ -1,0 +1,9 @@
+<KinBody name="frosting">
+  <modelsdir>../../models</modelsdir>
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>cake_frosting.iv</Data>
+      <Render>cake_frosting_padded</Render>
+    </Geom>      
+  </Body>
+</KinBody>

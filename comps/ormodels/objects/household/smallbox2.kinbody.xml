@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <KinBody>
+    <RotationAxis>0 1 0 -90</RotationAxis>
+    <Body type="static">
+      <Geom type="box">
+	    <Translation>0 0.1525 0</Translation>
+        <extents>0.1575 0.1925 0.095</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>1 0 0</diffuseColor>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>0.132773758 0.105790009 0.000547677</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>-0.140839188 0.023427326 0.040922672</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>-0.001885587 0.330292084 0.003015972</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>0.068883980 0.151447845 -0.071165237</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>0.095453339 0.046556507 0.076134529</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>-0.112259239 0.293345795 0.075904495</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+    <mass type="sphere">
+      <total>10</total>
+      <radius>1</radius>
+    </mass>
+    </Body>
+     <mocap>
+      <name>smallbox2.prj</name>
+        <markers>132.773758 -0.547677 105.790009
+-140.839188 -40.922672 23.427326
+-1.885587 -3.015972 330.292084
+68.883980 71.165237 151.447845
+95.453339 -76.134529 46.556507
+-112.259239 -75.904495 293.345795
+</markers>
+    </mocap>
+  </KinBody>

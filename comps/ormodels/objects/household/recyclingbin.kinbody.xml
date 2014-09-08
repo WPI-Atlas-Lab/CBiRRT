@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<KinBody name="recyclingbin">
+    <Body name="body" type="dynamic">
+        <Translation>0 0 0</Translation>
+        <Geom type="trimesh">
+            <data>models/objects/recyclingbin.iv 0.1</data>
+            <Render>models/objects/recyclingbin.iv 0.1</Render>
+        </Geom>
+    </Body>
+</KinBody>

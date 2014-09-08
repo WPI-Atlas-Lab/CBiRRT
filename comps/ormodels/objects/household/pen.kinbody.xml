@@ -1,0 +1,12 @@
+<KinBody name="pen">
+
+  <Body name="pen" type="dynamic">
+    <Geom type="cylinder">
+        <RotationAxis>1 0 0 90</RotationAxis>
+        <Translation>0 0 0.095</Translation>
+        <height>0.2</height>
+        <radius>0.005</radius>
+        <diffuseColor>0.3 0.8 0.8</diffuseColor>
+    </Geom>
+  </Body>
+</KinBody>

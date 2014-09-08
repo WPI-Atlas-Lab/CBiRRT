@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <KinBody>
+    <RotationAxis>0 1 0 -90</RotationAxis>
+    <Body type="static">
+      <Geom type="box">
+	    <Translation>-0.01 0.11 0</Translation>
+        <extents>0.09 0.11 0.055</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>1 0 0</diffuseColor>
+      </Geom>
+      
+    <mass type="sphere">
+      <total>10</total>
+      <radius>1</radius>
+    </mass>
+    </Body>
+<mocap>
+      <name>smallbox1.prj</name>
+        <markers>-14.583348 -3.692267 239.248459
+96.210617 -1.259588 190.676651
+-66.641930 -76.136765 110.042976
+94.119766 -45.435574 20.743027
+39.265553 68.516495 67.697014
+-116.713882 42.825230 213.787628
+</markers>
+    </mocap>
+  </KinBody>

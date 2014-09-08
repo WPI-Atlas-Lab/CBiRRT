@@ -1,0 +1,14 @@
+<KinBody name="mugblack">
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>models/objects/black_plastic_mug.iv</Data>
+      <Render>models/objects/black_plastic_mug.iv</Render>
+    </Geom>      
+  </Body>
+  <visiontracking>
+    <!-- vision will give the position of the top of the cup -->
+    <!-- <prerotationaxis>0 0 1 -90</prerotationaxis> -->
+    <modelname>../../openrave_local/data/intel/mugblack.kinbody.xml</modelname>
+    <translation>0 0 -0.135</translation>
+  </visiontracking>
+</KinBody>

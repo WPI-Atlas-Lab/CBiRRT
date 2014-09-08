@@ -1,0 +1,11 @@
+<KinBody name="box">
+  <Body type="dynamic">
+      <Geom type="cylinder">
+    	<RotationMat>1 0 0 0 0 1 0 -1 0</RotationMat>
+        <diffuseColor>0.3 0.3 0.7</diffuseColor>
+        <radius>0.03175</radius>
+        <height>0.12</height>
+      </Geom>      
+  </Body>
+
+</KinBody>

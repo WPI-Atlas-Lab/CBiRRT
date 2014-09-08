@@ -1,0 +1,518 @@
+<Robot>
+  <KinBody name="davinci_2port">
+
+  <Body name="davinci_base" type="dynamic" enable="false">
+
+    <Geom type="cylinder">
+        <radius>0.015</radius>
+        <height>0.005</height>
+        <diffuseColor>0 .5 .5</diffuseColor>
+    </Geom>
+
+  </Body>
+
+  <Body name="/right/wam1" type="dynamic" enable="false">
+    <offsetfrom>davinci_base</offsetfrom>
+    <Geom type="sphere" >
+        <radius>0.055</radius>
+        <diffuseColor>0 .2 .5</diffuseColor>
+    </Geom>
+  </Body>
+
+  <Joint name="R_Shoulder_Yaw" type="hinge">
+    <body>davinci_base</body>
+    <body>/right/wam1</body>
+    <offsetfrom>/right/wam1</offsetfrom>
+    <axis>0 0 1</axis>
+    <limitsdeg>-80 80</limitsdeg>
+    <maxvel>0.5</maxvel> 
+  </Joint>
+
+  <Body name="/right/wam2" type="dynamic" enable="false">
+      <offsetfrom>/right/wam1</offsetfrom>
+    <Geom type="sphere" render="false">
+        <radius>0.015</radius>
+        <diffuseColor>0 .2 .5</diffuseColor>
+    </Geom>
+  </Body>
+
+  <Joint name="R_Shoulder_Pitch" type="hinge">
+      <body>/right/wam1</body>
+      <body>/right/wam2</body>
+      <offsetfrom>/right/wam2</offsetfrom>
+    <axis>1 0 0</axis>
+    <limitsdeg>-90 90</limitsdeg> 
+    <maxvel>0.5</maxvel> 
+  </Joint>
+
+  <Body name="/right/wam3" type="dynamic" enable="false">
+      <offsetfrom>/right/wam2</offsetfrom>
+    <Geom type="sphere" render="false">
+        <radius>0.015</radius>
+        <diffuseColor>0 .2 .5</diffuseColor>
+    </Geom>
+  </Body>
+
+  <Joint name="R_Shoulder_Roll" type="hinge">
+      <body>/right/wam2</body>
+      <body>/right/wam3</body>
+      <offsetfrom>/right/wam3</offsetfrom>
+    <axis>0 1 0</axis>
+    <limitsdeg>-180 180</limitsdeg> 
+    <maxvel>0.5</maxvel> 
+  </Joint>
+
+  <Body name="/right/slider" type="dynamic">
+    <offsetfrom>/right/wam3</offsetfrom>
+      <Geom type="cylinder">
+        <radius>0.01</radius>
+        <height>0.3</height>
+        <diffuseColor>0.05 0.05 0.05</diffuseColor>
+      </Geom>
+      <Geom type="box" render="false">
+        <extents>0.01 0.15 0.01</extents>
+        <diffuseColor>.6 .6 .6</diffuseColor>
+        <ambientColor>0.6 0.6 0.6</ambientColor>
+      </Geom>
+     
+      <Geom type="cylinder">
+	<Translation>0 -0.15 0</Translation>
+        <radius>0.008</radius>
+        <height>0.05</height>
+        <diffuseColor>0.85 0.85 0.85</diffuseColor>
+      </Geom>
+      <Geom type="box" render="false">
+	<Translation>0 -0.15 0</Translation>
+        <extents>0.008 0.025 0.008</extents>
+        <diffuseColor>.6 .6 .6</diffuseColor>
+        <ambientColor>0.6 0.6 0.6</ambientColor>
+      </Geom>
+ </Body>
+
+  <Joint name="R_slider" type="slider">
+    <body>/right/wam3</body>
+    <body>/right/slider</body>
+    <offsetfrom>/right/slider</offsetfrom>
+    <axis>0 -1 0</axis>
+    <limitsdeg>-0.1 0.1</limitsdeg> 
+    <maxvel>0.5</maxvel> 
+  </Joint>
+
+    <Body name="/right/wrist1" type="dynamic">
+      <offsetfrom>/right/slider</offsetfrom>
+        <Translation>0 -0.18 0</Translation>
+        <RotationAxis>0 0 1 180</RotationAxis>
+      <Geom type="sphere">
+        <radius>0.01</radius>
+        <diffuseColor>0.7 0.7 0.7</diffuseColor>
+      </Geom>
+    </Body>
+
+    <Joint name = "R_J1" type="hinge">
+      <Body>/right/slider</Body>
+      <Body>/right/wrist1</Body>
+      <offsetfrom>/right/wrist1</offsetfrom>
+      <anchor>0 0 0</anchor>
+      <weight>1</weight>
+      <limitsdeg>-90 90</limitsdeg> 
+      <axis>1 0 0</axis>
+    <maxvel>0.5</maxvel> 
+    </Joint>
+
+    <Body name="/right/wrist2" type="dynamic">
+      <offsetfrom>/right/wrist1</offsetfrom>
+      <Geom type="sphere">
+        <radius>0.01</radius>
+        <diffuseColor>0.7 0.7 0.7</diffuseColor>
+      </Geom>
+    </Body>
+
+    <Joint name = "R_J2" type="hinge">
+      <Body>/right/wrist1</Body>
+      <Body>/right/wrist2</Body>
+      <offsetfrom>/right/wrist2</offsetfrom>
+      <anchor>0 0 0</anchor>
+      <weight>1</weight>
+      <limitsdeg>-90 90</limitsdeg> 
+      <axis>0 0 1</axis>
+      <maxvel>0.5</maxvel> 
+    </Joint>
+
+    <Body name="/right/wrist3" type="dynamic">
+      <offsetfrom>/right/wrist2</offsetfrom>
+      <Geom type="sphere">
+        <radius>0.01</radius>
+        <diffuseColor>0.7 0.7 0.7</diffuseColor>
+      </Geom>
+      <Geom type="cylinder">
+	<Translation>0.0 0.01 0</Translation>
+	<radius>0.008</radius>
+        <height>0.025</height>
+        <diffuseColor>0.7 0.7 0.7</diffuseColor>
+      </Geom>
+      <Geom type="box" render="false">
+	<Translation>0.0 0.01 0</Translation>
+        <extents>0.008 0.0125 0.008</extents>
+        <diffuseColor>.6 .6 .6</diffuseColor>
+        <ambientColor>0.6 0.6 0.6</ambientColor>
+      </Geom>
+    </Body>
+
+    <Joint name = "R_J3" type="hinge">
+      <Body>/right/wrist2</Body>
+      <Body>/right/wrist3</Body>
+      <offsetfrom>/right/wrist3</offsetfrom>
+      <anchor>0 0 0</anchor>
+      <weight>1</weight>
+      <limitsdeg>-90 90</limitsdeg> 
+      <axis>0 1 0</axis>
+      <maxvel>0.5</maxvel> 
+    </Joint>
+
+    <Body name="/right/hand1" type="dynamic">
+      <offsetfrom>/right/wrist3</offsetfrom>
+     <Translation>0.004 0.035 0</Translation>
+<!--
+      <Geom type="cylinder">
+	<radius>0.004</radius>
+        <height>0.03</height>
+        <diffuseColor>0.7 0.7 0.7</diffuseColor>
+      </Geom>
+-->
+      <Geom type="box" render="false">
+        <extents>0.004 0.015 0.004</extents>
+        <diffuseColor>.6 .6 .6</diffuseColor>
+        <ambientColor>0.6 0.6 0.6</ambientColor>
+      </Geom>
+      <Geom type="trimesh">
+        <!-- <data>davinci_gripper.iv</data>-->
+
+        <Render>davinci_gripper.iv</Render>
+      </Geom>
+    </Body>
+
+    <Joint name = "R_J4" type="hinge">
+      <Body>/right/wrist3</Body>
+      <Body>/right/hand1</Body>
+      <offsetfrom>/right/hand1</offsetfrom>
+      <anchor>0 -0.0125 0</anchor>
+      <weight>1</weight>
+      <limitsdeg>-25 0</limitsdeg> 
+      <axis>0 0 1</axis>
+      <maxvel>0.5</maxvel> 
+    </Joint>
+
+    <Body name="/right/hand2" type="dynamic">
+      <offsetfrom>/right/wrist3</offsetfrom>
+     <Translation>-0.004 0.035 0</Translation>
+<!--
+      <Geom type="cylinder">
+	<radius>0.004</radius>
+        <height>0.03</height>
+        <diffuseColor>0.7 0.7 0.7</diffuseColor>
+      </Geom>
+-->
+      <Geom type="box" render="false">
+        <extents>0.004 0.015 0.004</extents>
+        <diffuseColor>.6 .6 .6</diffuseColor>
+        <ambientColor>0.6 0.6 0.6</ambientColor>
+      </Geom>
+      <Geom type="trimesh">
+        <!-- <data>davinci_gripper.iv</data>-->
+	<RotationAxis>0 1 0 180</RotationAxis>
+        <Render>davinci_gripper.iv</Render>
+      </Geom>
+    </Body>
+
+    <Joint name = "R_J5" type="hinge">
+      <Body>/right/wrist3</Body>
+      <Body>/right/hand2</Body>
+      <offsetfrom>/right/hand2</offsetfrom>
+      <anchor>0 -0.0125 0</anchor>
+      <weight>1</weight>
+      <limitsdeg>0 25</limitsdeg> 
+      <axis>0 0 1</axis>
+      <maxvel>0.5</maxvel> 
+    </Joint>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <Body name="port2" type="dynamic" enable="false">
+    <offsetfrom>davinci_base</offsetfrom>
+    <Translation>0.4 0 0</Translation>
+    <Geom type="cylinder">
+        <radius>0.015</radius>
+        <height>0.005</height>
+        <diffuseColor>.5 0 .5</diffuseColor>
+    </Geom>
+  </Body>
+
+  <Joint name="port2slider" type="slider">
+    <body>davinci_base</body>
+    <body>port2</body>
+    <offsetfrom>port2</offsetfrom>
+    <axis>1 0 0</axis>
+    <limitsdeg>-0.5 0.5</limitsdeg> 
+    <maxvel>0.5</maxvel> 
+  </Joint>
+
+  <Body name="/left/wam1" type="dynamic" enable="false">
+    <offsetfrom>port2</offsetfrom>
+    <Geom type="sphere" render="false">
+        <radius>0.015</radius>
+        <diffuseColor>0 .2 .5</diffuseColor>
+    </Geom>
+  </Body>
+
+  <Joint name="L_ShouldeL_Yaw" type="hinge">
+    <body>port2</body>
+    <body>/left/wam1</body>
+    <offsetfrom>/left/wam1</offsetfrom>
+    <axis>0 0 1</axis>
+    <limitsdeg>-80 80</limitsdeg>
+      <maxvel>0.5</maxvel>  
+  </Joint>
+
+   <Body name="/left/wam2" type="dynamic" enable="false">
+      <offsetfrom>/left/wam1</offsetfrom>
+    <Geom type="sphere" render="false">
+        <radius>0.015</radius>
+        <diffuseColor>0 .2 .5</diffuseColor>
+    </Geom>
+  </Body>
+
+  <Joint name="L_ShouldeL_Pitch" type="hinge">
+      <body>/left/wam1</body>
+      <body>/left/wam2</body>
+      <offsetfrom>/left/wam2</offsetfrom>
+    <axis>1 0 0</axis>
+    <limitsdeg>-90 90</limitsdeg> 
+      <maxvel>0.5</maxvel> 
+  </Joint>
+
+  <Body name="/left/wam3" type="dynamic" enable="false">
+      <offsetfrom>/left/wam2</offsetfrom>
+    <Geom type="sphere" render="false">
+        <radius>0.015</radius>
+        <diffuseColor>0 .2 .5</diffuseColor>
+    </Geom>
+  </Body>
+
+  <Joint name="L_ShouldeL_Roll" type="hinge">
+      <body>/left/wam2</body>
+      <body>/left/wam3</body>
+      <offsetfrom>/left/wam3</offsetfrom>
+    <axis>0 1 0</axis>
+    <limitsdeg>-180 180</limitsdeg>
+      <maxvel>0.5</maxvel>  
+  </Joint>
+
+  <Body name="/left/slider" type="dynamic">
+    <offsetfrom>/left/wam3</offsetfrom>
+      <Geom type="cylinder">
+        <radius>0.01</radius>
+        <height>0.3</height>
+        <diffuseColor>0.05 0.05 0.05</diffuseColor>
+      </Geom>
+      <Geom type="box" render="false">
+        <extents>0.01 0.15 0.01</extents>
+        <diffuseColor>.6 .6 .6</diffuseColor>
+        <ambientColor>0.6 0.6 0.6</ambientColor>
+      </Geom>
+     
+      <Geom type="cylinder">
+	<Translation>0 -0.15 0</Translation>
+        <radius>0.008</radius>
+        <height>0.05</height>
+        <diffuseColor>0.85 0.85 0.85</diffuseColor>
+      </Geom>
+      <Geom type="box" render="false">
+	<Translation>0 -0.15 0</Translation>
+        <extents>0.008 0.025 0.008</extents>
+        <diffuseColor>.6 .6 .6</diffuseColor>
+        <ambientColor>0.6 0.6 0.6</ambientColor>
+      </Geom>
+ </Body>
+
+  <Joint name="L_slider" type="slider">
+    <body>/left/wam3</body>
+    <body>/left/slider</body>
+    <offsetfrom>/left/slider</offsetfrom>
+    <axis>0 -1 0</axis>
+    <limitsdeg>-0.1 0.1</limitsdeg> 
+      <maxvel>0.5</maxvel> 
+  </Joint>
+
+    <Body name="/left/wrist1" type="dynamic">
+      <offsetfrom>/left/slider</offsetfrom>
+        <Translation>0 -0.18 0</Translation>
+        <RotationAxis>0 0 1 180</RotationAxis>
+      <Geom type="sphere">
+        <radius>0.01</radius>
+        <diffuseColor>0.7 0.7 0.7</diffuseColor>
+      </Geom>
+    </Body>
+
+    <Joint name = "L_J1" type="hinge">
+      <Body>/left/slider</Body>
+      <Body>/left/wrist1</Body>
+      <offsetfrom>/left/wrist1</offsetfrom>
+      <anchor>0 0 0</anchor>
+      <weight>1</weight>
+      <limitsdeg>-90 90</limitsdeg> 
+      <axis>1 0 0</axis>
+      <maxvel>0.5</maxvel> 
+    </Joint>
+
+    <Body name="/left/wrist2" type="dynamic">
+      <offsetfrom>/left/wrist1</offsetfrom>
+      <Geom type="sphere">
+        <radius>0.01</radius>
+        <diffuseColor>0.7 0.7 0.7</diffuseColor>
+      </Geom>
+    </Body>
+
+    <Joint name = "L_J2" type="hinge">
+      <Body>/left/wrist1</Body>
+      <Body>/left/wrist2</Body>
+      <offsetfrom>/left/wrist2</offsetfrom>
+      <anchor>0 0 0</anchor>
+      <weight>1</weight>
+      <limitsdeg>-90 90</limitsdeg> 
+      <axis>0 0 1</axis>
+      <maxvel>0.5</maxvel> 
+    </Joint>
+
+    <Body name="/left/wrist3" type="dynamic">
+      <offsetfrom>/left/wrist2</offsetfrom>
+      <Geom type="sphere">
+        <radius>0.01</radius>
+        <diffuseColor>0.7 0.7 0.7</diffuseColor>
+      </Geom>
+      <Geom type="cylinder">
+	<Translation>0.0 0.01 0</Translation>
+	<radius>0.008</radius>
+        <height>0.025</height>
+        <diffuseColor>0.7 0.7 0.7</diffuseColor>
+      </Geom>
+      <Geom type="box" render="false">
+	<Translation>0.0 0.01 0</Translation>
+        <extents>0.008 0.0125 0.008</extents>
+        <diffuseColor>.6 .6 .6</diffuseColor>
+        <ambientColor>0.6 0.6 0.6</ambientColor>
+      </Geom>
+    </Body>
+
+    <Joint name = "L_J3" type="hinge">
+      <Body>/left/wrist2</Body>
+      <Body>/left/wrist3</Body>
+      <offsetfrom>/left/wrist3</offsetfrom>
+      <anchor>0 0 0</anchor>
+      <weight>1</weight>
+      <limitsdeg>-90 90</limitsdeg> 
+      <axis>0 1 0</axis>
+      <maxvel>0.5</maxvel> 
+    </Joint>
+
+    <Body name="/left/hand1" type="dynamic">
+      <offsetfrom>/left/wrist3</offsetfrom>
+     <Translation>0.004 0.035 0</Translation>
+<!--
+      <Geom type="cylinder">
+	<radius>0.004</radius>
+        <height>0.03</height>
+        <diffuseColor>0.7 0.7 0.7</diffuseColor>
+      </Geom>
+-->
+      <Geom type="box" render="false">
+        <extents>0.004 0.015 0.004</extents>
+        <diffuseColor>.6 .6 .6</diffuseColor>
+        <ambientColor>0.6 0.6 0.6</ambientColor>
+      </Geom>
+
+      <Geom type="trimesh">
+        <!--<data>davinci_gripper.iv</data>-->
+        <Render>davinci_gripper.iv</Render>
+      </Geom>
+    </Body>
+
+    <Joint name = "L_J4" type="hinge">
+      <Body>/left/wrist3</Body>
+      <Body>/left/hand1</Body>
+      <offsetfrom>/left/hand1</offsetfrom>
+      <anchor>0 -0.0125 0</anchor>
+      <weight>1</weight>
+      <limitsdeg>-25 0</limitsdeg> 
+      <axis>0 0 1</axis>
+      <maxvel>0.5</maxvel> 
+    </Joint>
+
+    <Body name="/left/hand2" type="dynamic">
+      <offsetfrom>/left/wrist3</offsetfrom>
+     <Translation>-0.004 0.035 0</Translation>
+<!--
+      <Geom type="cylinder">
+	<radius>0.004</radius>
+        <height>0.03</height>
+        <diffuseColor>0.7 0.7 0.7</diffuseColor>
+      </Geom>
+-->
+      <Geom type="box" render="false">
+        <extents>0.004 0.015 0.004</extents>
+        <diffuseColor>.6 .6 .6</diffuseColor>
+        <ambientColor>0.6 0.6 0.6</ambientColor>
+      </Geom>
+
+      <Geom type="trimesh">
+        <!-- <data>davinci_gripper.iv</data>-->
+	<RotationAxis>0 1 0 180</RotationAxis>
+        <Render>davinci_gripper.iv</Render>
+      </Geom>
+    </Body>
+
+    <Joint name = "L_J5" type="hinge">
+      <Body>/left/wrist3</Body>
+      <Body>/left/hand2</Body>
+      <offsetfrom>/left/hand2</offsetfrom>
+      <anchor>0 -0.0125 0</anchor>
+      <weight>1</weight>
+      <limitsdeg>0 25</limitsdeg> 
+      <axis>0 0 1</axis>
+      <maxvel>0.5</maxvel> 
+    </Joint>
+ 
+  <adjacent>/right/hand2 /right/hand1</adjacent>
+  <adjacent>/left/hand2 /left/hand1</adjacent>
+
+  </KinBody>
+
+  <Manipulator name="right_hand">
+    <base>davinci_base</base>
+    <effector>/right/wrist3</effector>
+    <iksolver>davinci2rightikfast</iksolver>
+    <joints>R_J4 R_J5</joints>
+    <closingdir>1 -1</closingdir>
+  </Manipulator>
+
+  <Manipulator name="left_hand">
+    <base>port2</base>
+    <effector>/left/wrist3</effector>
+    <iksolver>davinci2leftikfast</iksolver>
+    <joints>L_J4 L_J5</joints>
+    <closingdir>1 -1</closingdir>
+  </Manipulator>
+
+</Robot>
