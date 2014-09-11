@@ -30,6 +30,7 @@
 '''An example of TSR chaining for reaching for a bottle. This example uses two TSR Chains, each of length 1, to define the allowable goal end-effector poses'''
 
 from openravepy import *
+import openravepy as rave
 from numpy import *
 from str2num import *
 from rodrigues import *
@@ -59,16 +60,28 @@ if __name__ == "__main__":
     T0_object = MakeTransform(mat(eye(3)),mat([0.3602,  0.2226, 0.9214]).T)
     targobject.SetTransform(array(T0_object[0:3][:,0:4]))
     
-    robot = orEnv.GetRobots()[0]   
-    
-    ##set printing, display options, and collision checker
-    #orEnv.SetDebugLevel(DebugLevel.Info)
-    #colchecker = RaveCreateCollisionChecker(orEnv,'ode')
-    #orEnv.SetCollisionChecker(colchecker)
+    robot = orEnv.GetRobots()[0]        
+    init_transform = numpy.eye(4)
+    init_transform[:3,3] = [-.35, 1, .92712]
+    init_transform[:3,3] = [.1, 1, .92712]
+    #init_transform[:3,3] = [2.6, 1, .92712]
+    robot.SetTransform(init_transform)
+    robot.SetDOFValues(numpy.zeros(robot.GetDOF()))
+    ##set the active dof
+    robot.SetActiveDOFs(numpy.arange(robot.GetDOF()), rave.DOFAffine.Transform)
+    # move arms to side
+    robot.SetDOFValues([-1.3],[robot.GetJoint("l_arm_shx").GetDOFIndex()])
+    robot.SetDOFValues([1.3],[robot.GetJoint("r_arm_shx").GetDOFIndex()])
+    standing_posture = robot.GetActiveDOFValues()
 
+    ##set printing, display options, and collision checker
+    orEnv.SetDebugLevel(DebugLevel.Info)
+    colchecker = RaveCreateCollisionChecker(orEnv,'ode')
+    orEnv.SetCollisionChecker(colchecker)
+    
     ##create problem instances
-    #probs_cbirrt = RaveCreateProblem(orEnv,'CBiRRT')
-    #orEnv.LoadProblem(probs_cbirrt,'BarrettWAM')
+    probs_cbirrt = RaveCreateProblem(orEnv,'CBiRRT')
+    orEnv.LoadProblem(probs_cbirrt,'BarrettWAM')
 
     ##set up joint indices
     #activedofs = [0, 1, 2, 3, 4, 5, 6]
@@ -84,43 +97,44 @@ if __name__ == "__main__":
     #handdof = r_[(0.5*ones([1,3]))[0]];
     #robot.SetActiveDOFs([7, 8, 9])
     #robot.SetActiveDOFValues(handdof)
-
-    #time.sleep(0.5) #let the simulator draw the scene
-
+    
     ##set the active dof
     #robot.SetActiveDOFs(activedofs)
 
-    ##let's define two TSR chains for this task, they differ only in the rotation of the hand
-
-    ##first TSR chain
-
-    ##place the first TSR's reference frame at the object's frame relative to world frame
-    #T0_w = T0_object
-
-    ##get the TSR's offset frame in w coordinates
-    #Tw_e1 = MakeTransform(rodrigues([pi/2, 0, 0]),mat([0, 0.20, 0.1]).T)
-
-    ##define bounds to only allow rotation of the hand about z axis and a small deviation in translation along the z axis
-    #Bw = mat([0, 0,   0, 0,   -0.02, 0.02,   0, 0,   0, 0,   -pi, pi])
-
-    #TSRstring1 = SerializeTSR(0,'NULL',T0_w,Tw_e1,Bw)
-    #TSRChainString1 = SerializeTSRChain(0,1,0,1,TSRstring1,'NULL',[])
-
-
-    ##now define the second TSR chain
-    ##it is the same as the first TSR Chain except Tw_e is different (the hand is rotated by 180 degrees about its z axis)
-    #Tw_e2 = MakeTransform(rodrigues([0, pi, 0])*rodrigues([pi/2, 0, 0]),mat([0, 0.20, 0.1]).T)
-    #TSRstring2 = SerializeTSR(0,'NULL',T0_w,Tw_e2,Bw)
-    #TSRChainString2 = SerializeTSRChain(0,1,0,1,TSRstring2,'NULL',[])
-
-    ##call the cbirrt planner, it will generate a file with the trajectory called 'cmovetraj.txt'
-    #resp = probs_cbirrt.SendCommand('RunCBiRRT psample 0.25 %s %s'%(TSRChainString1,TSRChainString2))
-    #probs_cbirrt.SendCommand('traj cmovetraj.txt')
+    time.sleep(0.5) #let the simulator draw the scene
     
-##    traj=RaveCreateTrajectory(orEnv,'BarrettWAM')
-##    traj.Read('cmovetraj.txt',robot)
-##    robot.GetController().SetPath(traj)
-    #robot.WaitForController(0)
+
+    #let's define two TSR chains for this task, they differ only in the rotation of the hand
+
+    #first TSR chain
+
+    #place the first TSR's reference frame at the object's frame relative to world frame
+    T0_w = T0_object
+
+    #get the TSR's offset frame in w coordinates
+    Tw_e1 = MakeTransform(rodrigues([pi/2, 0, 0]),mat([0, 0.20, 0.1]).T)
+
+    #define bounds to only allow rotation of the hand about z axis and a small deviation in translation along the z axis
+    Bw = mat([0, 0,   0, 0,   -0.02, 0.02,   0, 0,   0, 0,   -pi, pi])
+
+    TSRstring1 = SerializeTSR(0,'NULL',T0_w,Tw_e1,Bw)
+    TSRChainString1 = SerializeTSRChain(0,1,0,1,TSRstring1,'NULL',[])
+
+
+    #now define the second TSR chain
+    #it is the same as the first TSR Chain except Tw_e is different (the hand is rotated by 180 degrees about its z axis)
+    Tw_e2 = MakeTransform(rodrigues([0, pi, 0])*rodrigues([pi/2, 0, 0]),mat([0, 0.20, 0.1]).T)
+    TSRstring2 = SerializeTSR(0,'NULL',T0_w,Tw_e2,Bw)
+    TSRChainString2 = SerializeTSRChain(0,1,0,1,TSRstring2,'NULL',[])
+
+    #call the cbirrt planner, it will generate a file with the trajectory called 'cmovetraj.txt'
+    resp = probs_cbirrt.SendCommand('RunCBiRRT psample 0.25 %s %s'%(TSRChainString1,TSRChainString2))
+    probs_cbirrt.SendCommand('traj cmovetraj.txt')
+    
+#    traj=RaveCreateTrajectory(orEnv,'BarrettWAM')
+#    traj.Read('cmovetraj.txt',robot)
+#    robot.GetController().SetPath(traj)
+    robot.WaitForController(0)
     
 
     print "Press return to exit."
