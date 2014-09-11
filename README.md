@@ -17,7 +17,7 @@ Build plugins:
 
 ```
 ./buildallpulgins.sh
-
+```
 
 Edit .bashrc:
 
