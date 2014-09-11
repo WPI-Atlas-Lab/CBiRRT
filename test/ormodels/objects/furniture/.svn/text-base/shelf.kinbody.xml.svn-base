@@ -1,0 +1,9 @@
+<KinBody name="shelf">
+<Body>
+  <!-- horizontal shelf -->
+  <Geom type="box">
+    <extents>0.2 0.25 0.01</extents>
+    <diffusecolor>0.4 0 0.1</diffusecolor>
+  </Geom>
+</Body>
+</KinBody>

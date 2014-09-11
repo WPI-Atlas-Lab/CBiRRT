@@ -1,0 +1,8 @@
+<KinBody name="cup">
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>models/objects/plastic_cup.iv</Data>
+      <Render>models/objects/plastic_cup.iv</Render>
+    </Geom>      
+  </Body>
+</KinBody>

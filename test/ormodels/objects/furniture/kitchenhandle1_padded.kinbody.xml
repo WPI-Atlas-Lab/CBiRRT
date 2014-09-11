@@ -1,0 +1,25 @@
+<Body>
+  <Geom type="cylinder">
+  <!-- 12mm diam handle, 29mm away from door surface -->
+    <translation>0.029 0 0</translation>
+    <!-- padded by .015 -->
+    <radius>0.012</radius>
+    <height>0.25</height>
+  </Geom>
+  <Geom type="cylinder">
+  <!-- 10mm diam support, 8cm from center -->
+    <translation>0.015 0.08 0</translation>
+    <!-- padded by .015 -->
+    <radius>0.01</radius>
+    <height>0.029</height>
+    <rotationaxis>0 0 1 90</rotationaxis>
+  </Geom>
+  <Geom type="cylinder">
+  <!-- 10mm diam support 8cm in other direction-->
+    <translation>0.015 -0.08 0</translation>
+    <!-- padded by .015 -->
+    <radius>0.01</radius>
+    <height>0.029</height>
+    <rotationaxis>0 0 1 90</rotationaxis>
+  </Geom>
+</Body>

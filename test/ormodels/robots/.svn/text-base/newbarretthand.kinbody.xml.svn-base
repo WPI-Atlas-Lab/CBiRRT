@@ -1,0 +1,200 @@
+<KinBody name="BarrettHand">
+  <Body name="wam7" type="dynamic">
+
+      <Geom type="trimesh" modifiable="false">
+          <data>barrett/wam7_280.iv 1.0</data>
+          <Render>barrett/wam7_280.iv 1.0</Render>
+      </Geom>
+
+    <Geom type="trimesh">
+      <Translation>0.0  0.0  0.1325</Translation>
+      <RotationMat>-1 0 0 0 -1 0 0 0 1</RotationMat>
+      <data>barrett/link1.iv </data>
+      <Render>barrett/link1.iv</Render>
+    </Geom>
+    <mass type="custom">
+      <total>1.18</total>
+    </mass>
+  </Body>
+
+  <!-- finger 0-->
+  <Body name="finger0_0" type="dynamic">
+      <offsetfrom>wam7</offsetfrom>
+    <Translation>0 -0.025 0.1325</Translation>
+    <Geom type="trimesh">
+      <data>barrett/link1.iv </data>
+      <Render>barrett/link1.iv</Render>
+    </Geom>
+  </Body>
+  <Body name="finger0_1" type="dynamic" >
+    <offsetfrom>finger0_0</offsetfrom>
+    <Translation>0.05 0 0</Translation>
+    <RotationMat>1 0 0 0 0 -1 0 1 0</RotationMat>
+    <Geom type="trimesh">
+      <Translation>0 0 0</Translation>
+      <data>barrett/link2.iv 1000.0</data>
+      <Render>barrett/link2.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="JF1">
+    <Body>finger0_0</Body>
+    <Body>finger0_1</Body>
+    <offsetfrom>finger0_1</offsetfrom>
+    <weight>4</weight>
+    <limitsdeg>0 140</limitsdeg> 
+    <axis>0 0 1</axis>
+    <maxvel>2</maxvel>
+    <resolution>1</resolution>
+  </Joint>
+  <Body name="finger0_2" type="dynamic" >
+    <offsetfrom>finger0_1</offsetfrom>
+    <Translation>0.07 0 0</Translation>
+    <RotationMat>1 0 0 0 1 0 0 0 1</RotationMat>
+    <Geom type="trimesh">
+      <Translation>0 0 0</Translation>
+      <data>barrett/link3.iv 1000.0</data>
+      <Render>barrett/link3.iv</Render>
+    </Geom>
+  </Body>
+  <Joint name="JF1mimic" type="hinge" enable="false" mimic="JF1 0.33333 0.8727">
+    <Body>finger0_1</Body>
+    <Body>finger0_2</Body>
+    <offsetfrom>finger0_2</offsetfrom>
+    <weight>4</weight>
+    <limitsdeg>0 90</limitsdeg> 
+    <axis>0 0 1</axis>
+    <maxvel>1</maxvel>
+    <resolution>1</resolution>
+  </Joint>
+
+
+  <!-- finger 1-->
+  <Body name="finger1_0" type="dynamic">
+      <offsetfrom>wam7</offsetfrom>
+    <Translation>0 0.025 0.1325</Translation>
+    <Geom type="trimesh">
+      <data>barrett/link1.iv </data>
+      <Render>barrett/link1.iv</Render>
+    </Geom>
+  </Body>
+  <Body name="finger1_1" type="dynamic" >
+    <offsetfrom>finger1_0</offsetfrom>
+    <Translation>0.05 0 0</Translation>
+    <RotationMat>1 0 0 0 0 -1 0 1 0</RotationMat>
+    <Geom type="trimesh">
+      <Translation>0 0 0</Translation>
+      <data>barrett/link2.iv 1000.0</data>
+      <Render>barrett/link2.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="JF2">
+    <Body>finger1_0</Body>
+    <Body>finger1_1</Body>
+    <offsetfrom>finger1_1</offsetfrom>
+    <weight>4</weight>
+    <limitsdeg>0 140</limitsdeg> 
+    <axis>0 0 1</axis>
+    <maxvel>2</maxvel>
+    <resolution>1</resolution>
+  </Joint>
+  <Body name="finger1_2" type="dynamic" >
+    <offsetfrom>finger1_1</offsetfrom>
+    <Translation>0.07 0 0</Translation>
+    <RotationMat>1 0 0 0 1 0 0 0 1</RotationMat>
+    <Geom type="trimesh">
+      <Translation>0 0 0</Translation>
+      <data>barrett/link3.iv 1000.0</data>
+      <Render>barrett/link3.iv</Render>
+    </Geom>
+  </Body>
+  <Joint name="JF2mimic" type="hinge" enable="false" mimic="JF2 0.33333 0.8727">
+    <Body>finger1_1</Body>
+    <Body>finger1_2</Body>
+    <offsetfrom>finger1_2</offsetfrom>
+    <weight>4</weight>
+    <limitsdeg>0 90</limitsdeg> 
+    <axis>0 0 1</axis>
+    <maxvel>1</maxvel>
+    <resolution>1</resolution>
+  </Joint>
+
+
+  <!-- finger 2-->
+  <Body name="finger2_1" type="dynamic" >
+      <offsetfrom>wam7</offsetfrom>
+    <Translation>-0.05 0 0.1325</Translation>
+    <RotationMat>-1 0 0 0 0 1 0 1 0</RotationMat>
+    <Geom type="trimesh">
+      <Translation>0 0 0</Translation>
+      <data>barrett/link2.iv 1000.0</data>
+      <Render>barrett/link2.iv</Render>
+    </Geom>
+  </Body>
+  <Joint type="hinge" name="JF3">
+      <body>wam7</body>
+    <Body>finger2_1</Body>
+    <offsetfrom>finger2_1</offsetfrom>
+    <weight>4</weight>
+    <limitsdeg>0 140</limitsdeg> 
+    <axis>0 0 1</axis>
+    <maxvel>2</maxvel>
+    <resolution>1</resolution>
+  </Joint>
+  <Body name="finger2_2" type="dynamic" >
+    <offsetfrom>finger2_1</offsetfrom>
+    <Translation>0.07 0 0</Translation>
+    <RotationMat>1 0 0 0 1 0 0 0 1</RotationMat>
+    <Geom type="trimesh">
+      <Translation>0 0 0</Translation>
+      <data>barrett/link3.iv </data>
+      <Render>barrett/link3.iv</Render>
+    </Geom>
+  </Body>
+  <Joint name="JF3mimic" type="hinge" enable="false" mimic="JF3 0.33333 0.8727">
+    <Body>finger2_1</Body>
+    <Body>finger2_2</Body>
+    <offsetfrom>finger2_2</offsetfrom>
+    <weight>4</weight>
+    <limitsdeg>0 90</limitsdeg> 
+    <axis>0 0 1</axis>
+    <maxvel>1</maxvel>
+    <resolution>1</resolution>
+  </Joint>
+
+  <!-- spread -->
+  <Joint name = "JF4" type="hinge">
+      <body>wam7</body>
+    <Body>finger0_0</Body>
+    <offsetfrom>finger0_0</offsetfrom>
+    <weight>4</weight>
+    <limitsdeg>-1 181</limitsdeg> 
+    <axis>0 0 -1</axis>
+    <!-- <anchor>0.025 0 0</anchor> -->
+    <maxvel>2</maxvel>
+    <resolution>1</resolution>
+  </Joint>
+  <Joint name="JF4mimic" type="hinge" enable="false" mimic="JF4 1.0 0.0">
+      <body>wam7</body>
+    <Body>finger1_0</Body>
+    <offsetfrom>finger1_0</offsetfrom>
+    <weight>4</weight>
+    <axis>0 0 1</axis>
+    <!-- <anchor>-0.025 0 0</anchor> -->
+    <maxvel>2</maxvel>
+    <resolution>1</resolution>
+  </Joint>
+
+  <!-- add adjacent links, necessary in order to prevent bogus collisions -->
+  <adjacent>finger0_0 finger1_0</adjacent>
+  <adjacent>finger0_1 finger0_2</adjacent>
+  <adjacent>finger1_1 finger1_2</adjacent>
+  <adjacent>finger2_1 finger2_2</adjacent>
+  <adjacent>wam7 finger0_1</adjacent>
+  <adjacent>wam7 finger0_2</adjacent>
+  <adjacent>wam7 finger1_1</adjacent>
+  <adjacent>wam7 finger1_2</adjacent>
+  <adjacent>wam7 finger2_1</adjacent>
+  <adjacent>wam7 finger2_2</adjacent>
+
+</KinBody>
+

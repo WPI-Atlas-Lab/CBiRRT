@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Robot name="BarrettWAM" file="robots/herb.robot.xml">
+  <KinBody>
+    <!--<translation>-0.0892 0.2184 0.7424</translation>-->
+    <!--<rotationmat>0 1 0 -1 0 0 0 0 1</rotationmat>-->
+
+    <modelsdir>.</modelsdir>
+    <Body name="wam7">
+        <Geom name="box_around_hand_for_voxel_filtering" type="box">
+            <extents>0.15 0.15 0.15</extents>
+            <translation>0.0 0.0 0.20</translation>
+            <diffuseColor>1 1 0</diffuseColor>
+        </Geom>
+      </Body>
+    </KinBody>
+
+</Robot>
+

@@ -1,0 +1,9 @@
+<KinBody name="juice">
+  <modelsdir>.</modelsdir>
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>bottle_sunkist_padded.iv</Data>
+      <Render>bottle_sunkist_padded.iv</Render>
+    </Geom>      
+  </Body>
+</KinBody>

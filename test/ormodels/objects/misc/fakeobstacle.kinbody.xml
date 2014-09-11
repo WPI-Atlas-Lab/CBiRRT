@@ -1,0 +1,9 @@
+<KinBody name="fakeobstacle">
+
+    <Body type="dynamic">
+        <Geom type="box">
+            <extents>0.08 0.01 0.08</extents>
+            <diffuseColor>0.5 0 0</diffuseColor>
+        </Geom>      
+    </Body>
+</KinBody>

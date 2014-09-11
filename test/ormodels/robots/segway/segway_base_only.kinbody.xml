@@ -1,0 +1,13 @@
+<KinBody name="segway">
+  <Body name="segway" type="dynamic"> 
+<!--    <Geom type="trimesh">
+      <Data>segway_base_only.iv</Data>
+      <Render>segway_base_only.iv</Render>
+    </Geom>-->
+    <Geom type="trimesh">
+      <Translation>0 0 -0.05</Translation>
+      <Data>idf_segway_bottom_origin.iv</Data>
+      <Render>idf_segway_bottom_origin.iv</Render>
+    </Geom>
+  </Body>
+</KinBody>

@@ -1,0 +1,20 @@
+<KinBody name="trayleft">
+
+  <Body name="body" type="dynamic">
+    <Geom type="box">
+       <extents>0.09 0.2 0.01</extents>
+       <diffuseColor>0.6 0.6 0.9</diffuseColor>
+    </Geom>
+    <Geom type="box">
+       <Translation>0 0.2 0.05</Translation> 
+       <extents>0.08 0.01 0.04</extents>
+       <diffuseColor>0.1 0.6 0.1</diffuseColor>
+    </Geom>
+
+    <mass type="custom">
+        <com>0 0 0</com>
+        <total>0.01</total>
+    </mass>
+  </Body>
+
+</KinBody>

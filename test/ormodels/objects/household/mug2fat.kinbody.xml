@@ -1,0 +1,32 @@
+<KinBody name="plasticmug">
+  <Body type="dynamic">
+    <Geom type="cylinder">
+      <Translation>0 0 0.083</Translation>
+      <RotationAxis>1 0 0 90</RotationAxis>
+      <diffuseColor>0.5 0 0</diffuseColor>
+      <radius>0.075</radius>
+      <height>0.16</height>
+    </Geom>
+      <!-- need this to get around crappy ODE contact normals -->
+       <Geom type="box">
+	    <Translation>0 0 0.083</Translation>
+        <RotationAxis>1 0 0 90</RotationAxis>
+        <extents>0.05 0.081 0.05</extents>
+        <diffuseColor>0.5 0 0</diffuseColor>
+      </Geom>
+
+
+    <Geom type="box">
+      <Translation>0.08 0 0.085</Translation>
+      <extents>0.04 0.02 0.06</extents>
+      <diffuseColor>0.5 0 0</diffuseColor>
+    </Geom>
+  </Body>
+      
+  <visiontracking>
+    <!-- vision will give the position of the top of the cup -->
+    <prerotationaxis>0 0 1 -90</prerotationaxis>
+    <modelname>data/intel/mug2.kinbody.xml</modelname>
+    <translation>0 0 -0.137</translation>
+  </visiontracking>
+</KinBody>

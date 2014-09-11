@@ -1,0 +1,12 @@
+<KinBody name="test">
+<Body name="body" type="static">
+
+  <Translation>0 0 0</Translation>
+  <Geom type="trimesh">
+    <data>models/objects/dogstatueconvex.iv</data>
+    <Render>models/objects/dogstatueconvex.iv</Render>
+  </Geom>
+  </Body>
+
+
+</KinBody>

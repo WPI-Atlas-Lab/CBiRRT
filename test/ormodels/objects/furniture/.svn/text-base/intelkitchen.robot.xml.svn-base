@@ -1,0 +1,4 @@
+<Robot name="intelkitchen">
+  <KinBody name="smalltable1" file="intelkitchen.kinbody.xml">
+  </KinBody>
+</Robot>

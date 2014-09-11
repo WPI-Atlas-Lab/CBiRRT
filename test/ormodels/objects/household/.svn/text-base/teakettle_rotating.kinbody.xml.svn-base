@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- kettle with a hinge for rotating -->
+<KinBody name = "teakettle_rotating">    
+    <Body name="base" type="dynamic">   
+        <Geom type="cylinder" name="basedisc">
+            <RotationAxis>1 0 0 90</RotationAxis>   
+            <Translation>0.0 0 0.01</Translation>
+            <diffuseColor>.3 .3 .3</diffuseColor>
+            <radius>0.00</radius>
+            <height>0.00</height>
+        </Geom> 
+        <!-- coordinate vectors --> 
+        <!--<Geom type="sphere" name ="origin">
+            <Translation>0 0 0.005</Translation> 
+            <diffuseColor>0.4 0.4 0.5</diffuseColor>
+            <radius>0.01</radius>
+        </Geom>     
+        <Geom type="cylinder" name ="x-axis">   
+            <Translation>0.05 0 0.005</Translation>
+            <diffuseColor>1 0 0</diffuseColor>
+            <radius>0.005</radius>
+            <height>0.08</height>
+        </Geom>         
+        <Geom type="cylinder" name ="y-axis">
+            <Translation>0 0.05 0.005</Translation>
+            <diffuseColor>0 1 0</diffuseColor>
+            <radius>0.005</radius>
+            <height>0.08</height>
+        </Geom>      -->
+    </Body>      
+    <Body name="kettle" type="dynamic">
+        <Geom type="trimesh">
+            <RotationAxis>0 0 1 180</RotationAxis>
+            <Data>objects/household/toastess_kettle.iv</Data>
+            <Render>objects/household/toastess_kettle.iv</Render>
+        </Geom>  	
+
+    </Body>
+    <Joint name="kettle_pivot" type="hinge">
+        <body>base</body>
+        <body>kettle</body>
+        <lostop>-360</lostop>
+        <histop>360</histop>
+        <axis>0 0 -1</axis> 
+        <anchor>0. 0. 0.</anchor>
+  </Joint>
+</KinBody>

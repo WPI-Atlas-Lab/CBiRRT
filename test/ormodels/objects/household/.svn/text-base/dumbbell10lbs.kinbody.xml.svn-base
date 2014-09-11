@@ -1,0 +1,47 @@
+<KinBody name="dumbbell10lbs">
+    <!--REEDO MEASUREMENTS AND INERTIAS-->
+  <Body name="dumbbell1" type="dynamic">
+    <Geom type="box">
+        <Translation>0 0 0.0275</Translation>
+        <extents>0.045 0.045 0.0275</extents>
+        <diffuseColor>0 0 0</diffuseColor>
+    </Geom>
+    <mass type="custom">
+        <total>2.268</total>
+        <!--<total>0.25</total>-->
+        <com>0 0 0.0275</com>
+        <inertia>0.0019 0 0 0 0.0019 0 0 0 0.0031</inertia>
+    </mass>
+
+  </Body>   
+
+  <Body name="dumbbell2" type="dynamic">
+    <Geom type="box">
+        <Translation>0 0 0.19</Translation>
+        <extents>0.045 0.045 0.0275</extents>
+        <diffuseColor>0 0 0</diffuseColor>
+    </Geom>
+    <mass type="custom">
+        <total>2.268</total>
+        <!--<total>0.25</total>-->
+        <com>0 0 0.19</com>
+        <inertia>0.0019 0 0 0 0.0019 0 0 0 0.0031</inertia>
+    </mass>
+  </Body>
+
+  <Body name="dumbbell3" type="dynamic">
+    <Geom type="cylinder">
+        <RotationAxis>1 0 0 90</RotationAxis>
+        <Translation>0 0 0.095</Translation>
+        <height>0.19</height>
+        <radius>0.015</radius>
+        <diffuseColor>0.4 0.4 0.4</diffuseColor>
+    </Geom>
+    <mass type="custom">
+        <total>0.000001</total>
+        <com>0 0 0.095</com>
+        <inertia>0.000001 0 0 0 0.000001 0 0 0 0.000001</inertia>
+    </mass>
+  </Body>
+  
+</KinBody>

@@ -1,0 +1,8 @@
+<KinBody name="milk_chocolate">
+  <Body type="static">
+    <Geom type="trimesh">
+      <Data>milk_chocolate_padded.iv</Data>
+      <Render>milk_chocolate.iv</Render>
+    </Geom>      
+  </Body>
+</KinBody>

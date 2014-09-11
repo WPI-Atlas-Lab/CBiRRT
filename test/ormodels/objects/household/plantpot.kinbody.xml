@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<KinBody>
+    <Body name="body" type="dynamic">
+        <Translation>0 0 0</Translation>
+        <Geom type="trimesh">
+            <data>models/objects/plantpot.iv 0.0015</data>
+            <Render>models/objects/plantpot.iv 0.0015</Render>
+        </Geom>
+    </Body>
+</KinBody>

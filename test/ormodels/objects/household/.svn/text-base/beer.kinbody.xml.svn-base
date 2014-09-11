@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<KinBody name="Target">
+    <Body name="body" type="static">
+
+        <Translation>0 0 0</Translation>
+        <Geom type="trimesh">
+            <data>models/objects/beer.iv</data>
+            <Render>models/objects/beer.iv</Render>
+        </Geom>
+
+    </Body>
+</KinBody>

@@ -1,0 +1,27 @@
+<KinBody name="keepout_boxes">
+<Body type="static">
+
+
+  <Geom name="keepout_box1" type="box">
+    <translation>0.2 -0.37  1.0</translation>
+    <extents>0.5 0.05  0.8</extents>
+    <diffusecolor>0.5 0 0.2</diffusecolor>
+    <transparency>0.5</transparency>
+  </Geom>
+<!--
+  <Geom name="keepout_box2" type="box">
+    <translation>-0.35  0.2 1.0</translation>
+    <extents>0.05 0.4   0.8</extents>
+    <diffusecolor>0.5 0 0.2</diffusecolor>
+    <transparency>0.5</transparency>
+  </Geom>
+
+  <Geom name="keepout_box2" type="box">
+    <translation>0.75  0.2 1.0</translation>
+    <extents>0.05 0.4   0.8</extents>
+    <diffusecolor>0.5 0 0.2</diffusecolor>
+    <transparency>0.5</transparency>
+  </Geom>
+-->
+</Body>
+</KinBody>

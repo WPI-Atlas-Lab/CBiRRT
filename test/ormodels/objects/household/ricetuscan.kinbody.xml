@@ -1,0 +1,9 @@
+<KinBody name="ricetuscan">
+  <Body type="static">
+    <Geom type="box">
+      <rotationaxis>0 1 0 -90</rotationaxis>
+      <extents>0.086 0.051 0.0175</extents>
+      <diffusecolor>0.3 0.1 1</diffusecolor>
+    </Geom>        
+  </Body>
+</KinBody>

@@ -1,0 +1,15 @@
+<KinBody name="plasticmugp">
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>models/objects/plastic_mug2p.iv</Data>
+      <Render>models/objects/plastic_mug2p.iv</Render>
+    </Geom>      
+  </Body>
+      
+  <visiontracking>
+    <!-- vision will give the position of the top of the cup -->
+    <prerotationaxis>0 0 1 -90</prerotationaxis>
+    <modelname>../../openrave_local/data/intel/mug2p.kinbody.xml</modelname>
+    <translation>0 0 -0.137</translation>
+  </visiontracking>
+</KinBody>

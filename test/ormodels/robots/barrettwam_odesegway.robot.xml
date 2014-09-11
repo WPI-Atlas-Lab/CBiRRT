@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sidd comments 3:19pm Monday July 9 2007 -->
+<!-- Joint 1 is rotating clockwise -->
+<!-- Joint 2 is rotating clockwise -->
+<!-- Joint 3 is rotating clockwise -->
+<!-- Joint 4 is rotating correctly but the IV file is flipped 180 degrees -->
+<!-- Joint 5 is rotating clockwise. Also, it's IV file seems to include the preceeding link. The preceeding link is correctly aligned but the actual link is 1 radian CCW along the true Z axis -->
+<!-- Joint 6 is rotating clockwise. Also, the rotation axis is incorrect -->
+<!-- Joint 7 is probably rotating CW, can't visualize it. -->
+<!-- Added palm. It's rotating weirdly. The fingers seem to rotate independant of the palm -->
+<!-- Ideally, the palm should be in it's own XML file, but loading files inside files is not working -->
+
+<Robot name="BarrettWAM" file="barrettwam_ode.robot.xml">
+  <KinBody>
+    <translation>-0.0892 0.2184 0.7424</translation>
+    <rotationmat>0 1 0 -1 0 0 0 0 1</rotationmat>
+
+    <modelsdir>..</modelsdir>
+    <Body name="wam0">
+<!--       <Geom name="segway" type="trimesh">
+        <translation>0.2184 0.0892 -0.7424</translation>
+        <rotationmat>0 -1 0 1 0 0 0 0 1</rotationmat>
+        <data>models/segway/idf_segway_bottom_origin.iv</data>
+        <render>models/segway/idf_segway_bottom_origin.iv</render>
+      </Geom> -->
+      <Geom name="segway" type="box">
+        <translation>0.2184 0.0892 -0.7424</translation>
+        <rotationmat>0 -1 0 1 0 0 0 0 1</rotationmat>
+        <render>models/segway/idf_segway_bottom_origin.iv</render>
+        <extents>0.01 0.01 0.01</extents>
+      </Geom>
+      <Geom name="segway_col" type="cylinder" render="false">
+        <translation>0.2184 0.0892 -0.1</translation>
+        <rotationaxis>1 0 0 90</rotationaxis>
+        <radius>0.31</radius>
+        <height>0.2</height>
+      </Geom>
+      <Geom name="touchscreen" type="trimesh">
+        <translation>0.421 0.115 -0.013</translation>
+        <rotationmat>0 -1 0 1 0 0 0 0 1</rotationmat>
+        <data>models/segway/touchscreen.iv</data>
+        <render>models/segway/touchscreen.iv</render>
+      </Geom>
+    </Body>
+    <Body name="wam1">
+      <Geom name="mast" type="trimesh">
+        <translation>0 0 -0.1143</translation>
+        <data>models/hokuyo/laser_mast.iv</data>
+        <render>models/hokuyo/laser_mast.iv</render>
+      </Geom>
+      <Geom name="mast_col" type="box" render="false">
+        <translation>0.062502   0.124575   0.15</translation>
+        <extents>0.03 0.03 0.27</extents>
+      </Geom>
+      <Geom name="camera1_col" type="box" render="false">
+        <extents>0.055 0.03 0.02</extents>
+        <translation>0.09 0.1573 0.2097</translation>
+      </Geom>
+      <Geom name="camera1" type="box">
+        <extents>0.03 0.015 0.015</extents>
+        <translation>0.08 0.1523 0.2097</translation>
+      </Geom>
+      <Geom name="camera2_col" type="box" render="false">
+        <extents>0.055 0.07 0.04</extents>
+        <translation>0.09 0.1673 0.15</translation>
+      </Geom>
+      <Geom name="camera2" type="box">
+        <extents>0.03 0.015 0.025</extents>
+        <translation>0.08 0.1523 0.15</translation>
+      </Geom>
+    </Body>
+    <Body name="wam4">
+      <Geom name="cameras" type="trimesh">
+        <translation>-0.0533 -0.2285 0</translation>
+        <rotationmat>0 -1 0 0 0 1 -1 0 0</rotationmat>
+        <data>models/WAM_forearm_camera_pair.iv</data>
+        <render>models/WAM_forearm_camera_pair.iv</render>
+      </Geom>
+    </Body>
+  </KinBody>
+
+</Robot>

@@ -1,0 +1,12 @@
+<KinBody name="Box3x3_">
+  <Body type="dynamic">
+    <Geom type="box">
+      <extents>0.12 0.17 0.06</extents>
+      <diffusecolor>1 0 0</diffusecolor>
+    </Geom>        
+  </Body>
+      
+  <visiontracking>
+    <modelname>data/intel/box3x3.kinbody.xml</modelname>
+  </visiontracking>
+</KinBody>

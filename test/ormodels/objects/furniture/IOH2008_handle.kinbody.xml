@@ -1,0 +1,27 @@
+<!-- Cabinet handle for Open House 2008 demo -->
+<!-- Siddhartha Srinivasa                    -->
+<!-- Thu Oct 16 11:55:56 EDT 2008            -->
+<!-- Origin is at the center of the handle and flush on the door -->
+<!-- X axis points out of the door, Y along the door, and Z points up -->
+
+KinBody name="IOH2008_handle">
+  <Body name="IOH2008_handle" type="static">
+    <Geom type="cylinder">
+      <translation>0.029 0 0</translation>
+      <radius>0.008</radius>
+      <height>0.22</height>
+    </Geom>
+    <Geom type="cylinder">
+      <translation>0.015 0.08 0</translation>
+      <radius>0.008</radius>
+      <height>0.03</height>
+      <rotationaxis>0 0 1 90</rotationaxis>
+    </Geom>
+    <Geom type="cylinder">
+      <translation>0.015 -0.08 0</translation>
+      <radius>0.008</radius>
+      <height>0.03</height>
+      <rotationaxis>0 0 1 90</rotationaxis>
+    </Geom>
+  </Body>
+</KinBody>

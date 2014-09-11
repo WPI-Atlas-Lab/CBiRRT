@@ -1,0 +1,8 @@
+<KinBody name="fuze_bottle">
+  <Body type="static">
+    <Geom type="trimesh">
+      <Data>fuze_bottle_padded.iv</Data>
+      <Render>fuze_bottle.iv</Render>
+    </Geom>      
+  </Body>
+</KinBody>

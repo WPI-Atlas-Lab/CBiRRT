@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<KinBody>
+	<Body type="dynamic">
+        <Geom type="box">
+            <extents>0.06 0.026 0.05</extents>
+            <Translation>0 0 0</Translation>
+            <diffusecolor>0 0 0.4</diffusecolor>
+        </Geom>
+    </Body>
+</KinBody>

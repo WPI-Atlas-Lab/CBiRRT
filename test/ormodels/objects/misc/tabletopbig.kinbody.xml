@@ -1,0 +1,9 @@
+<KinBody name="tabletopbig">
+
+  <Body name="tabletopbig" type="dynamic">
+    <Geom type="box">
+       <extents>0.275 0.4 0.005</extents>
+       <diffuseColor>0.6 0.2 0.1</diffuseColor>
+    </Geom>
+  </Body>
+</KinBody>

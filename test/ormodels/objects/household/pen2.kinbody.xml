@@ -1,0 +1,9 @@
+<KinBody name="pen2">
+
+  <Body name="pen2" type="dynamic">
+    <Geom type="trimesh">
+      <data>../../openrave_local/models/pen2.iv</data>
+      <Render>../../openrave_local/models/pen2.iv</Render>
+    </Geom>
+  </Body>
+</KinBody>

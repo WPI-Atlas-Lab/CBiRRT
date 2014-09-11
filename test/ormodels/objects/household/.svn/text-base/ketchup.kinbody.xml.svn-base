@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<KinBody name="Target">
+    <Body name="body" type="static">
+
+        <Translation>0 0 0</Translation>
+        <Geom type="trimesh">
+            <data>models/objects/ketchup_top.iv 0.001</data>
+            <Render>models/objects/ketchup_top.iv 0.001</Render>
+        </Geom>
+<!--
+        <Geom type="cylinder">
+            <RotationAxis>1 0 0 90</RotationAxis>           
+            <Translation>0 0 0.05</Translation>
+            <diffuseColor>0.7 0.1 0.1</diffuseColor>
+            <radius>0.0225</radius>
+            <height>0.1</height>
+        </Geom>
+-->
+
+        <Geom type="trimesh">
+            <Translation>0 0 0.05</Translation>
+            <data>models/objects/ketchup_body_simple.iv</data>
+            <Render>models/objects/ketchup_body_simple.iv</Render>
+        </Geom>
+
+    </Body>
+</KinBody>

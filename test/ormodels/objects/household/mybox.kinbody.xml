@@ -1,0 +1,8 @@
+<KinBody name="mybox">
+  <Body type="static">
+    <Geom type="box">
+      <extents>0.5 0.2 0.6</extents>
+      <diffusecolor>1 0 0.3</diffusecolor>
+    </Geom>        
+  </Body>
+</KinBody>

@@ -1,0 +1,9 @@
+<KinBody name="fakebox">
+  <Body name="fakebox" type="dynamic">
+    <Geom type="box">
+      <extents>0.4 0.5 0.22</extents>
+      <diffuseColor>0.7 0 0.7</diffuseColor>
+    </Geom>        
+  </Body>
+
+</KinBody>

@@ -1,0 +1,57 @@
+<!-- pr2 robot with simulated sensors and controllers attached -->
+<robot file="pr2-beta-static.zae">
+  <attachedsensor name="l_forearm_cam_optical_frame">
+    <link>l_forearm_cam_optical_frame</link>
+    <sensor type="BaseCamera" args="">
+      <KK>772.55 772.55 320.5 240.5</KK>
+      <width>640</width>
+      <height>480</height>
+      <framerate>5</framerate>
+      <color>0.5 1 0.5</color>
+      <power>0</power>
+    </sensor>
+  </attachedsensor>
+  <attachedsensor name="r_forearm_cam_optical_frame">
+    <link>r_forearm_cam_optical_frame</link>
+    <sensor type="BaseCamera" args="">
+      <KK>772.55 772.55 320.5 240.5</KK>
+      <width>640</width>
+      <height>480</height>
+      <framerate>5</framerate>
+      <color>0.5 1 0.5</color>
+      <power>0</power>
+    </sensor>
+  </attachedsensor>
+  <attachedsensor name="narrow_stereo_optical_frame">
+    <link>narrow_stereo_optical_frame</link>
+    <sensor type="BaseCamera" args="">
+      <KK>772.55 772.55 320.5 240.5</KK>
+      <width>640</width>
+      <height>480</height>
+      <framerate>5</framerate>
+      <color>0.5 0.5 1</color>
+      <power>0</power>
+    </sensor>
+  </attachedsensor>
+  <attachedsensor name="wide_stereo_optical_frame">
+    <link>wide_stereo_optical_frame</link>
+    <sensor type="BaseCamera" args="">
+      <KK>320 320 320.5 240.5</KK>
+      <width>640</width>
+      <height>480</height>
+      <framerate>5</framerate>
+      <color>1 0.5 0</color>
+      <power>0</power>
+    </sensor>
+  </attachedsensor>
+
+  <Manipulator name="left_last6">
+    <base>l_shoulder_pan_link</base>
+    <effector>l_gripper_palm_link</effector>
+    <translation>0.18 0 0</translation>
+    <RotationAxis>0 1 0 90</RotationAxis>
+    <iksolver>ikfast_pr2_left_last6</iksolver>
+    <joints>l_gripper_l_finger_joint</joints>
+    <closingdir>1</closingdir>
+  </Manipulator>
+</robot>

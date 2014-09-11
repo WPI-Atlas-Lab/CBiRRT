@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Template
+    <Body name="" type="">
+	  <Translation></Translation>
+	  <RotationAxis></RotationAxis>
+      <Geom type="">
+        <Data>=</Data>
+        <Render></Render>
+      </Geom>
+      <mass type="box">
+        <mass></mass>
+        <extents></extents>
+      </mass>
+    </Body>
+-->
+
+<Robot>
+  <KinBody name="Test1">
+
+    <Body name="crane0" type="dynamic">
+      <Translation>0.0  0.0  0.0</Translation>
+      <Geom type="box">
+        <extents>1 1 1 </extents>
+        <render>models/tower_crane/crane0.wrl</render>
+      </Geom>
+    </Body>
+    <Body name="crane1" type="dynamic">
+      <Translation>19.4400 701.7000 76.3500</Translation>
+      <offsetfrom>crane0</offsetfrom>
+      <Geom type="box">
+        <extents>1 1 1</extents>
+        <render>models/tower_crane/crane1.wrl</render>
+      </Geom>
+    </Body>
+
+    <Joint name = "J0" type="hinge">
+      <Body>crane0</Body>
+      <Body>crane1</Body>
+      <offsetfrom>crane1</offsetfrom>
+      <weight>4</weight>
+      <lostop>-179</lostop>
+      <histop>179</histop>
+      <axis>0 1 0</axis>
+      <maxvel>2</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+    <Body name="crane2" type="dynamic">
+      <Translation>19.3000 85.9000 374.4500</Translation>
+      <offsetfrom>crane1</offsetfrom>
+      <Geom type="box">
+        <extents>1 1 1</extents>
+        <render>models/tower_crane/crane2.wrl</render>
+      </Geom>
+    </Body>
+
+    <Joint name = "J1" type="slider">
+      <Body>crane1</Body>
+      <Body>crane2</Body>
+      <offsetfrom>crane2</offsetfrom>
+      <weight>4</weight>
+      <lostop>-300</lostop>
+      <histop>200</histop>
+      <axis>0 0 -1</axis>
+      <maxvel>100</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+    <Body name="dummy" type="dynamic">
+      <offsetfrom>crane2</offsetfrom>
+      <Geom type="box">
+        <extents>0.1 0.1 0.1</extents>
+      </Geom>
+    </Body>
+
+
+    <Body name="crane3" type="dynamic">
+      <offsetfrom>dummy</offsetfrom>
+      <Translation>-18.3900 -162.5000 3.2000</Translation>
+      <Geom type="box">
+        <extents>1 1 1</extents>
+        <render>models/tower_crane/crane3.wrl</render>
+      </Geom>
+    </Body>
+
+    
+
+
+
+  </KinBody>
+
+  <!-- <Manipulator>
+    <effector>Arm2</effector>
+	<base>Base</base>
+    <joints>j1 j2</joints>
+    <closed>2 2</closed>
+    <opened>-40 -40</opened>
+    <Translation>0.125 0 0</Translation>
+    <RotationAxis>1 0 0 90</RotationAxis>
+  </Manipulator> -->
+</Robot>

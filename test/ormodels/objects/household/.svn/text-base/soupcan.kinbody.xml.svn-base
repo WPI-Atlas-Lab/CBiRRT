@@ -1,0 +1,9 @@
+<KinBody name="soupcan">
+  <modelsdir>../../models</modelsdir>
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>soup_can.iv</Data>
+      <Render>soup_can_padded.iv</Render>
+    </Geom>      
+  </Body>
+</KinBody>

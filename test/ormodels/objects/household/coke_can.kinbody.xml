@@ -1,0 +1,9 @@
+<KinBody name="coke_can">
+  <modelsdir>.</modelsdir>
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>sodacan.iv 0.0325</Data>
+      <Render>sodacan.iv 0.0325</Render>
+    </Geom>      
+  </Body>
+</KinBody>

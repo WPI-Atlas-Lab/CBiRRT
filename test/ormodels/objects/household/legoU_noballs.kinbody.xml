@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <KinBody name="legoU">
+    <RotationAxis>0 1 0 -90</RotationAxis>
+    <Body type="static">
+      <Geom type="box">
+	    <Translation>0.0736 0.1115 0</Translation>
+        <extents>0.01505 0.1115 0.0215</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>0 1 0</diffuseColor>
+      </Geom>
+      <Geom type="box">
+	    <Translation>-0.0863 0.1115 0</Translation>
+        <extents>0.01505 0.1115 0.0215</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>0 1 0</diffuseColor>
+      </Geom>
+
+      <Geom type="box">
+	    <Translation>-0.0063651 0.2079 0</Translation>
+        <extents>0.095 0.01505 0.0215</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>0 1 0</diffuseColor>
+      </Geom>
+
+      <Geom type="box">
+	    <Translation>-0.0863 0.01505 0.0314</Translation>
+        <extents>0.01505 0.01505 0.0099</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>0 1 0</diffuseColor>
+      </Geom>
+      <Geom type="box">
+	    <Translation>0.0736 0.01505 0.0314</Translation>
+        <extents>0.01505 0.01505 0.0099</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>0 1 0</diffuseColor>
+      </Geom>
+    </Body>
+      <mocap>
+       <name>legoU.prj</name>
+       <markers>108.339035 -5.778839 174.722595    -119.647591 2.702192 57.362083    106.951477 1.207540 19.553524    40.898090 -33.579651 24.335642   -49.743881 -8.685564 20.813049   -119.254005 2.637397 138.578369</markers>
+      </mocap>
+    <mass type="sphere">
+      <total>10</total>
+      <radius>1</radius>
+    </mass>
+  </KinBody>

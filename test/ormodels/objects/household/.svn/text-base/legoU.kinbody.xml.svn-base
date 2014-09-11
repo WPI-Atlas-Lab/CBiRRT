@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <KinBody name="legoU">
+    <RotationAxis>0 1 0 -90</RotationAxis>
+    <Body type="static">
+      <Geom type="box">
+	    <Translation>0.0736 0.1115 0</Translation>
+        <extents>0.01505 0.1115 0.0215</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>0 1 0</diffuseColor>
+      </Geom>
+      <Geom type="box">
+	    <Translation>-0.0863 0.1115 0</Translation>
+        <extents>0.01505 0.1115 0.0215</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>0 1 0</diffuseColor>
+      </Geom>
+
+      <Geom type="box">
+	    <Translation>-0.0063651 0.2079 0</Translation>
+        <extents>0.095 0.01505 0.0215</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>0 1 0</diffuseColor>
+      </Geom>
+
+      <Geom type="box">
+	    <Translation>-0.0863 0.01505 0.0314</Translation>
+        <extents>0.01505 0.01505 0.0099</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>0 1 0</diffuseColor>
+      </Geom>
+      <Geom type="box">
+	    <Translation>0.0736 0.01505 0.0314</Translation>
+        <extents>0.01505 0.01505 0.0099</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>0 1 0</diffuseColor>
+      </Geom>
+
+      <Geom type="sphere">
+        <Translation>0.108339035 0.174722595 0.005778839</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>-0.119647591 0.057362083 -0.002702192</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>0.106951477 0.019553524 -0.001207540</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>0.040898090 0.024335642 0.033579651</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>-0.049743881 0.020813049 0.008685564</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+      <Geom type="sphere">
+        <Translation>-0.119254005 0.138578369 -0.002637397</Translation>
+        <radius>0.0125</radius>
+      </Geom>
+    </Body>
+      <mocap>
+       <name>legoU.prj</name>
+       <markers>108.339035 -5.778839 174.722595    -119.647591 2.702192 57.362083    106.951477 1.207540 19.553524    40.898090 -33.579651 24.335642   -49.743881 -8.685564 20.813049   -119.254005 2.637397 138.578369</markers>
+      </mocap>
+    <mass type="sphere">
+      <total>10</total>
+      <radius>1</radius>
+    </mass>
+  </KinBody>

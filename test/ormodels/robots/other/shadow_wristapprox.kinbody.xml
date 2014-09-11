@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<KinBody>
+    <Body name="palm" type="dynamic">
+        <Geom type="trimesh">
+            <data>models/shadow/palmsimple.iv</data>
+            <Render>models/shadow/palmsimple.iv</Render>
+        </Geom>
+    </Body>
+</KinBody>

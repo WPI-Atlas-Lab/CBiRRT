@@ -1,0 +1,15 @@
+<KinBody name="plasticmug">
+  <Body type="dynamic">
+    <Geom type="trimesh">
+      <Data>models/objects/plastic_mug2.iv</Data>
+      <Render>models/objects/plastic_mug2.iv</Render>
+    </Geom>      
+  </Body>
+      
+  <visiontracking>
+    <!-- vision will give the position of the top of the cup -->
+    <prerotationaxis>0 0 1 -90</prerotationaxis>
+    <modelname>data/intel/mug2.kinbody.xml</modelname>
+    <translation>0 0 -0.137</translation>
+  </visiontracking>
+</KinBody>

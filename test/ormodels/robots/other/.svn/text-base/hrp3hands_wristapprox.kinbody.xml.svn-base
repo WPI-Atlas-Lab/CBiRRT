@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<KinBody>
+
+    <Body name="center" type="dynamic">
+      <Translation>0 0 0</Translation>
+
+      <Geom type="box">
+        <Translation>43321 32423 -2273</Translation>
+        <extents>0.01 0.01 0.01</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>1 0 0</diffuseColor>
+      </Geom>
+
+      <mass type="sphere">
+        <total>0.1</total>
+      </mass>
+
+    </Body>
+
+
+     <Body name="RWristP" type="dynamic">
+      <offsetfrom>center</offsetfrom>
+
+      <Geom type="box">
+        <Translation>0.004 -0.005 -0.1225</Translation>
+        <extents>0.058 0.045 0.145</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>1 0 0</diffuseColor>
+      </Geom>
+      <Geom type="box">
+        <Translation>0.004 0.0025 -0.025</Translation>
+        <extents>0.05 0.05 0.05</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>1 0 0</diffuseColor>
+      </Geom>
+
+    </Body>
+
+
+    <Body name="LWristP" type="dynamic">
+      <offsetfrom>center</offsetfrom>
+      <Geom type="box">
+        <Translation>0.004 0.005 -0.1225</Translation>
+        <extents>0.058 0.045 0.145</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>1 0 0</diffuseColor>
+      </Geom>
+      <Geom type="box">
+        <Translation>0.004 -0.0025 -0.025</Translation>
+        <extents>0.05 0.05 0.05</extents>
+        <ambientColor>0.2 0.2 0.2</ambientColor>
+        <diffuseColor>1 0 0</diffuseColor>
+      </Geom>
+   </Body>  
+
+    <Joint name="J_RHand" type="slider">
+      <Body>center</Body>
+      <Body>RWristP</Body>
+      <offsetfrom>RWristP</offsetfrom>
+      <weight>4</weight>
+      <lostop>0</lostop>
+      <histop>0.5</histop>
+      <axis>0 1 0</axis>
+      <maxvel>8</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+
+    <Joint name="J_LHand" type="slider">
+      <Body>center</Body>
+      <Body>LWristP</Body>
+      <offsetfrom>LWristP</offsetfrom>
+      <weight>4</weight>
+      <lostop>-0.5</lostop>
+      <histop>0</histop>
+      <axis>0 1 0</axis>
+      <maxvel>8</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+
+	
+</KinBody>

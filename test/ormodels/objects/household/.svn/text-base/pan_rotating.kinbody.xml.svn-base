@@ -1,0 +1,40 @@
+<KinBody name="pan_rotating">
+  <Body name="base" type="dynamic">   
+	  <Geom type="sphere" name ="origin">
+		  <Translation>0 0 0.005</Translation> <!-- offset so doesn't protrude from bottom -->
+		  <diffuseColor>0.4 0.4 0.5</diffuseColor>
+		  <radius>0.01</radius>
+	  </Geom>	  
+	  <!-- coordinate vectors --> 
+	  <Geom type="cylinder" name ="x-axis">
+		  <RotationAxis>0 0 1 90</RotationAxis> -->		
+		  <Translation>0.05 0 0.005</Translation>
+		  <diffuseColor>1 0 0</diffuseColor>
+		  <radius>0.005</radius>
+		  <height>0.08</height>
+	  </Geom>   	  
+	  <Geom type="cylinder" name ="y-axis">
+		  <!-- <RotationAxis>1 0 0 90</RotationAxis>  -->
+		  <Translation>0 0.05 0.005</Translation>
+		  <diffuseColor>0 1 0</diffuseColor>
+		  <radius>0.005</radius>
+		  <height>0.08</height>
+	  </Geom>      
+ </Body>  
+  <Body name="pan" type="dynamic">
+	<Geom type="trimesh">
+		<Data>objects/household/frying_pan.iv</Data>
+		<Render>objects/household/frying_pan.iv</Render>
+   	</Geom>     
+  </Body>
+  
+  <Joint name="pan_pivot" type="hinge">
+    <body>base</body>
+    <body>pan</body>
+    <lostop>-360</lostop>
+    <histop>360</histop>
+    <axis>0 0 -1</axis>	
+    <anchor>0. 0. 0.</anchor>
+  </Joint>
+
+</KinBody>

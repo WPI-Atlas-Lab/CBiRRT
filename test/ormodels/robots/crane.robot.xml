@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Template
+    <Body name="" type="">
+	  <Translation></Translation>
+	  <RotationAxis></RotationAxis>
+      <Geom type="">
+        <Data>=</Data>
+        <Render></Render>
+      </Geom>
+      <mass type="box">
+        <mass></mass>
+        <extents></extents>
+      </mass>
+    </Body>
+-->
+
+<Robot>
+  <KinBody name="Test1">
+
+    <Body name="crane0" type="dynamic">
+      <Translation>0.0  0.0  0.0</Translation>
+      <Geom type="box">
+        <render>models/tower_crane/crane0.wrl</render>
+      </Geom>
+    </Body>
+    <Body name="crane1" type="dynamic">
+      <Translation>19.4400 701.7000 76.3500</Translation>
+      <offsetfrom>crane0</offsetfrom>
+      <Geom type="trimesh">
+        <data>models/tower_crane/crane1.wrl</data>
+        <render>models/tower_crane/crane1.wrl</render>
+      </Geom>
+    </Body>
+
+    <Joint name = "J0" type="hinge">
+      <Body>crane0</Body>
+      <Body>crane1</Body>
+      <offsetfrom>crane1</offsetfrom>
+      <weight>4</weight>
+      <lostop>-179</lostop>
+      <histop>179</histop>
+      <axis>0 1 0</axis>
+      <maxvel>2</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+    <Body name="crane2" type="dynamic">
+      <Translation>19.3000 85.9000 374.4500</Translation>
+      <offsetfrom>crane1</offsetfrom>
+      <Geom type="trimesh">
+        <data>models/tower_crane/crane2.wrl</data>
+        <render>models/tower_crane/crane2.wrl</render>
+      </Geom>
+    </Body>
+
+     <Joint name = "J1" type="slider">
+      <Body>crane1</Body>
+      <Body>crane2</Body>
+      <offsetfrom>crane2</offsetfrom>
+      <weight>4</weight>
+      <lostop>-300</lostop>
+      <histop>300</histop>
+      <axis>0 0 1</axis>
+      <maxvel>100</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+
+
+    <Body name="crane3" type="dynamic">
+      <offsetfrom>crane2</offsetfrom>
+      <Translation>-18.3900 -162.5000 3.2000</Translation>
+      <Geom type="trimesh">
+        <data>models/tower_crane/crane3.wrl</data>
+        <render>models/tower_crane/crane3.wrl</render>
+      </Geom>
+    </Body>
+
+    <Joint name = "J2" type="slider">
+      <Body>crane2</Body>
+      <Body>crane3</Body>
+      <offsetfrom>crane3</offsetfrom>
+      <weight>4</weight>
+      <lostop>-600</lostop>
+      <histop>600</histop>
+      <axis>0 1 0</axis>
+      <maxvel>100</maxvel>
+      <resolution>1</resolution>
+    </Joint>
+
+
+
+
+  </KinBody>
+
+ <Manipulator>
+    <effector>crane3</effector>
+    <base>crane0</base>
+    <joints>J2</joints>
+    <closed>0</closed>
+    <opened>0</opened>
+  </Manipulator>
+</Robot>

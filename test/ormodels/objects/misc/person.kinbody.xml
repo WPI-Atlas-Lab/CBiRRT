@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<KinBody name="person">
+
+    <Body type="dynamic" name="body">
+        <Geom type="box">
+            <Translation>0 0 0.78</Translation>
+            <extents>0.12 0.24 0.78</extents>
+            <diffusecolor>0.7 0 0.7</diffusecolor>
+        </Geom>        
+    </Body>
+
+	<Body type="dynamic" name="head">
+		<Geom type="sphere">
+			<Translation>0  0  1.67</Translation>
+			<diffuseColor>0.7 0 0.7</diffuseColor>
+			<radius>0.11</radius>
+		</Geom>
+	</Body>
+
+    <Body type="dynamic" name="nose">
+        <Geom type="box">
+            <RotationAxis>0 1 0 -30</RotationAxis>
+            <Translation>0.1 0 1.67</Translation>
+            <extents>0.02 0.02 0.03</extents>
+            <diffusecolor>0.7 0.7 0</diffusecolor>
+        </Geom>        
+    </Body>
+</KinBody>
