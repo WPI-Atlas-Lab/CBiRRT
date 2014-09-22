@@ -81,29 +81,10 @@ if __name__ == "__main__":
     
     ##create problem instances
     probs_cbirrt = RaveCreateProblem(orEnv,'CBiRRT')
-    orEnv.LoadProblem(probs_cbirrt,'BarrettWAM')
-
-    ##set up joint indices
-    #activedofs = [0, 1, 2, 3, 4, 5, 6]
-    #initdofvals = r_[3.68,   -1.9,   -0.0000,    2.2022,   -0.0000,    0.0000,    -2.1, 2.6,  -1.9,   -0.0000,    2.2022,   -3.14,   0.0000,    -1.0]
-    
-    ##start the robot in a reasonable location and configuration
-    #Trobot = array([-0.0024,1,0,-1,-0.0024,0,0,0,1, 0.274, -0.6, 0.000]).reshape(4,3).T
-    #robot.SetTransform(array(Trobot))
-    #robot.SetActiveDOFs(r_[0, 1, 2, 3, 4, 5, 6, 11, 12, 13, 14, 15, 16, 17])
-    #robot.SetActiveDOFValues(initdofvals)
-
-    ##preshape the fingers
-    #handdof = r_[(0.5*ones([1,3]))[0]];
-    #robot.SetActiveDOFs([7, 8, 9])
-    #robot.SetActiveDOFValues(handdof)
-    
-    ##set the active dof
-    #robot.SetActiveDOFs(activedofs)
+    orEnv.LoadProblem(probs_cbirrt,'r_arm_shx')
 
     time.sleep(0.5) #let the simulator draw the scene
     
-
     #let's define two TSR chains for this task, they differ only in the rotation of the hand
 
     #first TSR chain
