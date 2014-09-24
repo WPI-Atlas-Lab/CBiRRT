@@ -54,7 +54,7 @@ if __name__ == "__main__":
     
     #load the bottle
     targobject = orEnv.ReadKinBodyXMLFile('./ormodels/objects/household/juice_bottle_model.kinbody.xml')
-    orEnv.AddKinBody(targobject)
+    orEnv.AddKinBody(targobject)    
     
     #put the bottle somewhere
     T0_object = MakeTransform(mat(eye(3)),mat([0.3602,  0.2226, 0.9214]).T)
@@ -81,7 +81,7 @@ if __name__ == "__main__":
     
     ##create problem instances
     probs_cbirrt = RaveCreateProblem(orEnv,'CBiRRT')
-    orEnv.LoadProblem(probs_cbirrt,'r_arm_shx')
+    orEnv.LoadProblem(probs_cbirrt,'atlas')
 
     time.sleep(0.5) #let the simulator draw the scene
     
@@ -89,33 +89,33 @@ if __name__ == "__main__":
 
     #first TSR chain
 
-    #place the first TSR's reference frame at the object's frame relative to world frame
-    T0_w = T0_object
+    #~ #place the first TSR's reference frame at the object's frame relative to world frame
+    #~ T0_w = T0_object
 
-    #get the TSR's offset frame in w coordinates
-    Tw_e1 = MakeTransform(rodrigues([pi/2, 0, 0]),mat([0, 0.20, 0.1]).T)
+    #~ #get the TSR's offset frame in w coordinates
+    #~ Tw_e1 = MakeTransform(rodrigues([pi/2, 0, 0]),mat([0, 0.20, 0.1]).T)
 
-    #define bounds to only allow rotation of the hand about z axis and a small deviation in translation along the z axis
-    Bw = mat([0, 0,   0, 0,   -0.02, 0.02,   0, 0,   0, 0,   -pi, pi])
+    #~ #define bounds to only allow rotation of the hand about z axis and a small deviation in translation along the z axis
+    #~ Bw = mat([0, 0,   0, 0,   -0.02, 0.02,   0, 0,   0, 0,   -pi, pi])
 
-    TSRstring1 = SerializeTSR(0,'NULL',T0_w,Tw_e1,Bw)
-    TSRChainString1 = SerializeTSRChain(0,1,0,1,TSRstring1,'NULL',[])
+    #~ TSRstring1 = SerializeTSR(0,'NULL',T0_w,Tw_e1,Bw)
+    #~ TSRChainString1 = SerializeTSRChain(0,1,0,1,TSRstring1,'NULL',[])
 
 
-    #now define the second TSR chain
-    #it is the same as the first TSR Chain except Tw_e is different (the hand is rotated by 180 degrees about its z axis)
-    Tw_e2 = MakeTransform(rodrigues([0, pi, 0])*rodrigues([pi/2, 0, 0]),mat([0, 0.20, 0.1]).T)
-    TSRstring2 = SerializeTSR(0,'NULL',T0_w,Tw_e2,Bw)
-    TSRChainString2 = SerializeTSRChain(0,1,0,1,TSRstring2,'NULL',[])
+    #~ #now define the second TSR chain
+    #~ #it is the same as the first TSR Chain except Tw_e is different (the hand is rotated by 180 degrees about its z axis)
+    #~ Tw_e2 = MakeTransform(rodrigues([0, pi, 0])*rodrigues([pi/2, 0, 0]),mat([0, 0.20, 0.1]).T)
+    #~ TSRstring2 = SerializeTSR(0,'NULL',T0_w,Tw_e2,Bw)
+    #~ TSRChainString2 = SerializeTSRChain(0,1,0,1,TSRstring2,'NULL',[])
 
-    #call the cbirrt planner, it will generate a file with the trajectory called 'cmovetraj.txt'
-    resp = probs_cbirrt.SendCommand('RunCBiRRT psample 0.25 %s %s'%(TSRChainString1,TSRChainString2))
-    probs_cbirrt.SendCommand('traj cmovetraj.txt')
+    #~ #call the cbirrt planner, it will generate a file with the trajectory called 'cmovetraj.txt'
+    #~ resp = probs_cbirrt.SendCommand('RunCBiRRT psample 0.25 %s %s'%(TSRChainString1,TSRChainString2))
+    #~ probs_cbirrt.SendCommand('traj cmovetraj.txt')
     
-#    traj=RaveCreateTrajectory(orEnv,'BarrettWAM')
-#    traj.Read('cmovetraj.txt',robot)
-#    robot.GetController().SetPath(traj)
-    robot.WaitForController(0)
+#~ #    traj=RaveCreateTrajectory(orEnv,'BarrettWAM')
+#~ #    traj.Read('cmovetraj.txt',robot)
+#~ #    robot.GetController().SetPath(traj)
+    #~ robot.WaitForController(0)
     
 
     print "Press return to exit."
