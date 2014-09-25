@@ -21,13 +21,16 @@
 *.app
 
 # All build files
-*/build/*
+planning/cbirrt2/build/*
+planning/generalik/build/*
+planning/manipulation2/build/*
+
 comps/planning/herb2ikfast/CMakeFiles/*
 comps/planning/herb2ikfast/CMakeCache.txt
 comps/planning/herb2ikfast/Makefile
 comps/planning/herb2ikfast/cmake_install.cmake
 comps/planning/herb2ikfast/install_manifest.txt
-comps/planning/manipulation2/build/CMakeCache.txt
+
 
 # Remove all python compile files
 *.pyc
