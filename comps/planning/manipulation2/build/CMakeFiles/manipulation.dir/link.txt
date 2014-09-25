@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC  -L/usr/lib -L/usr/lib    -shared -Wl,-soname,libmanipulation.so -o libmanipulation.so CMakeFiles/manipulation.dir/manipulationmain.o CMakeFiles/manipulation.dir/manipulation.o CMakeFiles/manipulation.dir/trajectoryproblem.o -lopenrave0.8 -lboost_regex-mt 

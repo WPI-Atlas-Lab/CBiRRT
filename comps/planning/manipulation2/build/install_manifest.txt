@@ -1,1 +1,0 @@
-/home/rdu/Workspace/cbirrt/comps/planning/manipulation2/../../plugins/libmanipulation.so
