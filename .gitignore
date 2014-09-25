@@ -35,4 +35,4 @@ comps/planning/herb2ikfast/install_manifest.txt
 # Remove all python compile files
 *.pyc
 test/*.pyc
-
+comps/examples/python/*.pyc
