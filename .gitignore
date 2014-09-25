@@ -21,9 +21,9 @@
 *.app
 
 # All build files
-planning/cbirrt2/build/*
-planning/generalik/build/*
-planning/manipulation2/build/*
+comps/planning/cbirrt2/build/*
+comps/planning/generalik/build/*
+comps/planning/manipulation2/build/*
 
 comps/planning/herb2ikfast/CMakeFiles/*
 comps/planning/herb2ikfast/CMakeCache.txt
