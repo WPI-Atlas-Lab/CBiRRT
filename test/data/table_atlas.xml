@@ -1,0 +1,65 @@
+<!-- <Environment>
+  <KinBody name="table">
+    <Body type="static" name="table_link">
+      <Geom type="box">
+        <Translation> 0.95 0.0 1.0 </Translation>
+        <extents> .55 .85 .01 </extents>
+      </Geom>
+    </Body>
+  </KinBody>
+
+<KinBody name="bigredbutton">
+<translation> 0.85 0.2 1.0</translation>
+  <Body name="table" type="dynamic">
+    <Geom type="box">
+       <extents>.1 .1 .05</extents>
+       <diffuseColor> 0 0 0 </diffuseColor>
+    </Geom>
+    <Geom type="cylinder">
+      <translation>0 0 .25</translation>
+      <rotationaxis>1 0 0 -90</rotationaxis>
+      <radius>.05</radius>
+      <height>.35</height>
+      <diffuseColor>1 0 0</diffuseColor>
+      <ambientColor>1 0 0</ambientColor>
+    </Geom>
+  </Body>
+</KinBody>
+</Environment> -->
+<Environment>
+  <KinBody name="table">
+    <Body type="static" name="table_link">
+      <Geom type="box">
+        <Translation> 0.95 0.0 1.0 </Translation>
+        <extents> .55 .85 .01 </extents>
+      </Geom>
+    </Body>
+  </KinBody>
+
+  <KinBody name="pillar">
+    <Body type="static" name="pillar_link">
+      <Geom type="box">
+        <Translation> 0.45 0.8 1.0 </Translation>
+        <extents> .15 .15 0.8 </extents>
+      </Geom>
+    </Body>
+  </KinBody>
+
+<KinBody name="bigredbutton">
+<translation> 0.85 0.2 1.0</translation>
+  <Body name="table" type="dynamic">
+    <Geom type="box">
+       <extents>.1 .1 .05</extents>
+       <diffuseColor> 0 0 0 </diffuseColor>
+    </Geom>
+    <Geom type="cylinder">
+      <translation>0 0 .25</translation>
+      <rotationaxis>1 0 0 0</rotationaxis>
+      <radius>.05</radius>
+      <height>.35</height>
+      <diffuseColor>1 0 0</diffuseColor>
+      <ambientColor>1 0 0</ambientColor>
+    </Geom>
+  </Body>
+</KinBody>
+</Environment>

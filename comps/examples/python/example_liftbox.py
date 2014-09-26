@@ -108,6 +108,7 @@ if __name__ == "__main__":
     robot.SetActiveDOFs(arm1dofs)
     startik1 = probs_cbirrt.SendCommand('DoGeneralIK exec nummanips 1 maniptm 1 %s'%SerializeTransform(Tik1))
     startik = '%s %s'%(startik0,startik1)
+    print startik0
 
     robot.SetActiveDOFs(activedofs)
     robot.SetActiveDOFValues(str2num(startik))
