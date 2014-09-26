@@ -96,10 +96,9 @@ if __name__ == "__main__":
 
     jointtm = str2num(probs_cbirrt.SendCommand('GetJointTransform name kitchen jointind %d'%fridgejointind))
 
-    #set up the grasp
+    #set up the grasp (rodrigues() function is used to obtain unit quaterion vector; 
+    # MakeTransform() function is used to build 4*4 transform matrix according to rotation matrix and translate)
     T0_RH1 = MakeTransform(rodrigues([0,0,pi])*(mat([-1, 0, 0, 0, 0, -1, 0, -1, 0]).T).reshape(3,3), mat([1.4351, -0.21, 1.1641]).T)
-
-    
 
     startik = str2num(probs_cbirrt.SendCommand('DoGeneralIK exec nummanips 1 maniptm 0 %s'%SerializeTransform(T0_RH1)))
     robot.SetActiveDOFValues(startik)

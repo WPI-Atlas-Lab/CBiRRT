@@ -101,7 +101,8 @@ if __name__ == "__main__":
     Tik1 = MakeTransform(handrot1,handtrans1);
 
    
-    #get the ik solutions for both arms for the box in the start pose
+    #get the ik solutions for both arms for the box in the start pose 
+    # (to get ik solution, first, you need to set active dof 'SetActiveDOFs()', then, you can get the joint state by using probs_cbirrt.SendCommand())
     robot.SetActiveDOFs(arm0dofs)
     startik0 = probs_cbirrt.SendCommand('DoGeneralIK exec nummanips 1 maniptm 0 %s'%SerializeTransform(Tik0))
     robot.SetActiveDOFs(arm1dofs)
